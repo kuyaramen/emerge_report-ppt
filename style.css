@@ -22,7 +22,7 @@ body, html {
     font-family: 'Inter', -apple-system, sans-serif;
     background-color: var(--navy);
     background:
-        linear-gradient(rgba(7, 26, 47, 0.86), rgba(7, 26, 47, 0.92)),
+        linear-gradient(rgba(7, 26, 47, 0.3), rgba(7, 26, 47, 0.5)),
         url("./assets/serverless-background.jpg");
     background-size: cover;
     background-position: center;
