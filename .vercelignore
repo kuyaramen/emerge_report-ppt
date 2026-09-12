@@ -3,3 +3,11 @@
 __pycache__/
 .venv/
 requirements.txt
+*.pptx
+*.md
+.git/
+.gitignore
+.env
+node_modules/
+.next/
+

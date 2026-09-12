@@ -12,3 +12,9 @@ build/
 test_script_*.js
 extracted_*.txt
 recovered_slides.txt
+*.pptx
+*.md
+.env
+node_modules/
+.next/
+
