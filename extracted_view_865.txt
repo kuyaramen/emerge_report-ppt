@@ -1,0 +1,130 @@
+﻿Created At: 2026-09-12T14:01:36Z
+Completed At: 2026-09-12T14:01:36Z
+File Path: `file:///c:/Users/johnl/OneDrive/Desktop/EMERGING%20REPORT/index.html`
+Total Lines: 2989
+Total Bytes: 191725
+Showing lines 1030 to 1150
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1030:                         <rect x="50" y="130" width="140" height="100" rx="12" fill="rgba(15,30,55,0.9)" stroke="rgba(34,211,238,0.3)" stroke-width="1.5"/>
+1031:                         <g transform="translate(105, 145)">
+1032:                             <rect x="0" y="0" width="30" height="20" rx="2" fill="none" stroke="#22D3EE" stroke-width="2"/>
+1033:                             <line x1="0" y1="24" x2="30" y2="24" stroke="#22D3EE" stroke-width="2"/>
+1034:                             <polygon points="10,24 20,24 17,20 13,20" fill="#22D3EE"/>
+1035:                         </g>
+1036:                         <text x="120" y="195" fill="#F8FAFC" font-size="14" text-anchor="middle" font-weight="600">Application</text>
+1037:                         <text x="120" y="215" fill="#94A3B8" font-size="12" text-anchor="middle">Web &amp; Mobile</text>
+1038:                     </g>
+1039: 
+1040:                     <!-- ====== CENTER: Cloud Platform ====== -->
+1041:                     <g opacity="0">
+1042:                         <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="1.2s" fill="freeze"/>
+1043:                         <ellipse cx="400" cy="180" rx="140" ry="75" fill="rgba(37,99,235,0.06)"/>
+1044:                         <path d="M290,220 a45,45 0 0,1 0,-50 a55,55 0 0,1 70,-28 a50,50 0 0,1 80,0 a55,55 0 0,1 70,28 a45,45 0 0,1 0,50 z" fill="rgba(15,30,55,0.95)" stroke="#2563EB" stroke-width="2.5"/>
+1045:                         <path d="M290,220 a45,45 0 0,1 0,-50 a55,55 0 0,1 70,-28 a50,50 0 0,1 80,0 a55,55 0 0,1 70,28 a45,45 0 0,1 0,50 z" fill="none" stroke="rgba(34,211,238,0.15)" stroke-width="1"/>
+1046:                         <text x="400" y="175" fill="#2563EB" font-size="13" text-anchor="middle" font-weight="700" letter-spacing="3">BACKEND</text>
+1047:                         <text x="400" y="195" fill="#22D3EE" font-size="15" text-anchor="middle" font-weight="700" letter-spacing="3">SERVICES</text>
+1048:                     </g>
+1049: 
+1050:                     <!-- ====== RIGHT: Services Stack ====== -->
+1051:                     
+1052:                     <!-- Authentication (Top Right) -->
+1053:                     <g opacity="0">
+1054:                         <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="2.4s" fill="freeze"/>
+1055:                         <rect x="600" y="35" width="160" height="80" rx="10" fill="rgba(15,30,55,0.9)" stroke="rgba(34,211,238,0.3)" stroke-width="1.5"/>
+1056:                         <g transform="translate(680, 50)">
+1057:                             <path d="M 8 0 A 8 8 0 0 0 -8 0 L -8 4 L -12 4 L -12 18 L 12 18 L 12 4 L 8 4 Z" fill="none" stroke="#22D3EE" stroke-width="2"/>
+1058:                             <circle cx="0" cy="11" r="2" fill="#22D3EE"/>
+1059:                         </g>
+1060:                         <text x="680" y="90" fill="#F8FAFC" font-size="14" text-anchor="middle" font-weight="600">Authentication</text>
+1061:                     </g>
+1062: 
+1063:                     <!-- Database (Middle Right) -->
+1064:                     <g opacity="0">
+1065:                         <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="2.6s" fill="freeze"/>
+1066:                         <rect x="600" y="140" width="160" height="80" rx="10" fill="rgba(15,30,55,0.9)" stroke="rgba(34,211,238,0.3)" stroke-width="1.5"/>
+1067:                         <g transform="translate(680, 155)">
+1068:                             <ellipse cx="0" cy="0" rx="12" ry="4" fill="none" stroke="#22D3EE" stroke-width="2"/>
+1069:                             <path d="M -12 0 L -12 8 A 12 4 0 0 0 12 8 L 12 0" fill="none" stroke="#22D3EE" stroke-width="2"/>
+1070:                             <path d="M -12 8 L -12 16 A 12 4 0 0 0 12 16 L 12 8" fill="none" stroke="#22D3EE" stroke-width="2"/>
+1071:                         </g>
+1072:                         <text x="680" y="195" fill="#F8FAFC" font-size="14" text-anchor="middle" font-weight="600">Database</text>
+1073:                     </g>
+1074: 
+1075:                     <!-- File Storage (Bottom Right) -->
+1076:                     <g opacity="0">
+1077:                         <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="2.8s" fill="freeze"/>
+1078:                         <rect x="600" y="245" width="160" height="80" rx="10" fill="rgba(15,30,55,0.9)" stroke="rgba(34,211,238,0.3)" stroke-width="1.5"/>
+1079:                         <g transform="translate(680, 260)">
+1080:                             <path d="M -12 0 L 0 0 L 8 8 L 8 20 L -12 20 Z" fill="none" stroke="#22D3EE" stroke-width="2"/>
+1081:                             <line x1="0" y1="0" x2="0" y2="8" stroke="#22D3EE" stroke-width="2"/>
+1082:                             <line x1="0" y1="8" x2="8" y2="8" stroke="#22D3EE" stroke-width="2"/>
+1083:                         </g>
+1084:                         <text x="680" y="300" fill="#F8FAFC" font-size="14" text-anchor="middle" font-weight="600">File Storage</text>
+1085:                     </g>
+1086: 
+1087:                 </svg>
+1088:             </div>
+1089: 
+1090:             <div style="display: flex; justify-content: center; margin-bottom: 20px;">
+1091:                 <div class="glass-card" style="padding: 20px 40px; display: inline-block; text-align: left;">
+1092:                     <ul style="margin: 0; padding-left: 20px; font-size: 1.1rem; color: var(--muted); line-height: 1.8;">
+1093:                         <li><strong style="color: white;">Provides ready-made backend services</strong></li>
+1094:                         <li><strong style="color: white;">Includes authentication and databases</strong></li>
+1095:                         <li><strong style="color: white;">Reduces backend development work</strong></li>
+1096:                         <li>Examples: <strong style="color: var(--cyan);">Firebase</strong> and <strong style="color: var(--cyan);">Supabase</strong></li>
+1097:                     </ul>
+1098:                 </div>
+1099:             </div>
+1100:         </div>
+1101: 
+1102:         <!-- ============================================ -->
+1103:         <!-- SLIDE 10: SERVERLESS ARCHITECTURE -->
+1104:         <!-- ============================================ -->
+1105:         <div class="slide" id="slide-10">
+1106:             <h2>Serverless Architecture</h2>
+1107:             <p>Serverless architecture combines FaaS and BaaS into a complete application model.</p>
+1108:             <div class="vertical-process">
+1109:                 <div class="vertical-node" style="border-style:dashed;">Client (Browser / App)</div>
+1110:                 <div class="vertical-arrow">â†“</div>
+1111:                 <div class="vertical-node">API Gateway</div>
+1112:                 <div class="vertical-arrow">â†“</div>
+1113:                 <div class="vertical-node highlight">Serverless Functions (FaaS)</div>
+1114:                 <div class="vertical-arrow">â†“</div>
+1115:                 <div class="vertical-node" style="border-color:var(--blue)">Backend Services (BaaS)</div>
+1116:                 <div class="vertical-arrow">â†“</div>
+1117:                 <div class="vertical-node" style="background:var(--blue); color:white; border:none;">Database / Storage / Auth</div>
+1118:             </div>
+1119:         </div>
+1120: 
+1121:         <!-- ============================================ -->
+1122:         <!-- SLIDE 11: TRADITIONAL VS SERVERLESS -->
+1123:         <!-- ============================================ -->
+1124:         <div class="slide" id="slide-11" style="justify-content: center;">
+1125:             <h2 style="text-align: center; border-bottom: none; margin-bottom: 40px;">Traditional Server vs Serverless</h2>
+1126:             
+1127:             <div class="two-column" style="margin: 0 auto; max-width: 1000px; gap: 40px; align-items: stretch;">
+1128:                 
+1129:                 <!-- Image Container -->
+1130:                 <div style="flex: 1; opacity: 0; animation: fadeSlideUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; animation-delay: 0.2s;">
+1131:                     <div class="glass-card" style="padding: 15px; height: 100%; display: flex; align-items: center; justify-content: center; overflow: hidden; border-radius: 16px;">
+1132:                         <img src="C:/Users/johnl/.gemini/antigravity-ide/brain/a819ae44-22c0-445d-89ba-e9590dc49652/traditional_vs_serverless_comparison_1789215885552.png" 
+1133:                              alt="Traditional vs Serverless Comparison" 
+1134:                              style="width: 100%; height: auto; border-radius: 8px; object-fit: cover;">
+1135:                     </div>
+1136:                 </div>
+1137: 
+1138:                 <!-- Comparison Table -->
+1139:                 <div style="flex: 1; opacity: 0; animation: fadeSlideUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; animation-delay: 0.5s;">
+1140:                     <div class="glass-card" style="padding: 30px; height: 100%; display: flex; flex-direction: column; justify-content: center;">
+1141:                         <table class="modern-table" style="width: 100%; text-align: left; border-collapse: collapse; font-size: 1rem;">
+1142:                             <thead>
+1143:                                 <tr>
+1144:                                     <th style="padding-bottom: 20px; color: white; width: 50%; font-weight: 600; font-size: 1.1rem; border-bottom: 1px solid rgba(255,255,255,0.1);">Traditional Server</th>
+1145:                                     <th style="padding-bottom: 20px; color: var(--cyan); width: 50%; font-weight: 600; font-size: 1.1rem; border-bottom: 1px solid rgba(255,255,255,0.1);">Serverless</th>
+1146:                                 </tr>
+1147:                             </thead>
+1148:                             <tbody>
+1149:                                 <tr>
+1150:                                     <td style="padding: 15px 0; color: var(--muted); border-bottom: 1px solid rgba(255,255,255,0.05);">Developer manages servers</td>
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.
+

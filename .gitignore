@@ -1,0 +1,14 @@
+.venv/
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+test_script_*.js
+extracted_*.txt
+recovered_slides.txt

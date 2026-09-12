@@ -1,0 +1,219 @@
+Created At: 2026-09-12T13:44:30Z
+Completed At: 2026-09-12T13:44:30Z
+File Path: `file:///c:/Users/johnl/OneDrive/Desktop/EMERGING%20REPORT/index.html`
+Total Lines: 2923
+Total Bytes: 187589
+Showing lines 1240 to 1450
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1240:         <div class="slide" id="slide-15" style="justify-content: flex-start; padding-top: 40px;">
+1241:             <h2 style="text-align: center; border-bottom: none; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px;">Security in Serverless Computing</h2>
+1242:             <p style="text-align: center; color: var(--muted); max-width: 800px; margin: 0 auto 30px auto; font-size: 1.05rem;">
+1243:                 Serverless platforms provide built-in security features, but developers must still protect application code, user data, and access permissions.
+1244:             </p>
+1245: 
+1246:             <style>
+1247:                 #slide-15 .security-container {
+1248:                     position: relative;
+1249:                     width: 100%;
+1250:                     max-width: 1000px;
+1251:                     margin: 0 auto;
+1252:                     display: flex;
+1253:                     flex-direction: row;
+1254:                     gap: 50px;
+1255:                     align-items: center;
+1256:                     justify-content: center;
+1257:                     flex: 1;
+1258:                 }
+1259:                 #slide-15 .diagram-area {
+1260:                     position: relative;
+1261:                     width: 450px;
+1262:                     height: 450px;
+1263:                     flex-shrink: 0;
+1264:                 }
+1265:                 #slide-15 .detail-area {
+1266:                     flex: 1;
+1267:                     position: relative;
+1268:                     display: flex;
+1269:                     flex-direction: column;
+1270:                     justify-content: center;
+1271:                 }
+1272:                 #slide-15 .sec-core {
+1273:                     position: absolute;
+1274:                     top: 50%; left: 50%; transform: translate(-50%, -50%);
+1275:                     width: 130px; height: 130px;
+1276:                     border-radius: 50%;
+1277:                     background: radial-gradient(circle, rgba(34, 211, 238, 0.15) 0%, rgba(15, 30, 55, 0.95) 80%);
+1278:                     border: 2px solid #22D3EE;
+1279:                     display: flex; flex-direction: column; align-items: center; justify-content: center;
+1280:                     z-index: 5;
+1281:                     box-shadow: 0 0 30px rgba(34, 211, 238, 0.3);
+1282:                     animation: corePulse 4s ease-in-out infinite;
+1283:                 }
+1284:                 @keyframes corePulse {
+1285:                     0% { box-shadow: 0 0 20px rgba(34, 211, 238, 0.2); }
+1286:                     50% { box-shadow: 0 0 45px rgba(34, 211, 238, 0.6); }
+1287:                     100% { box-shadow: 0 0 20px rgba(34, 211, 238, 0.2); }
+1288:                 }
+1289:                 #slide-15 .sec-node {
+1290:                     position: absolute;
+1291:                     width: 64px; height: 64px;
+1292:                     border-radius: 50%;
+1293:                     background: rgba(15, 30, 55, 0.9);
+1294:                     border: 2px solid rgba(255, 255, 255, 0.2);
+1295:                     display: flex; align-items: center; justify-content: center;
+1296:                     font-size: 1.6rem;
+1297:                     cursor: pointer;
+1298:                     z-index: 10;
+1299:                     transform: translate(-50%, -50%);
+1300:                     transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+1301:                     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+1302:                 }
+1303:                 #slide-15 .sec-node:hover {
+1304:                     border-color: rgba(34, 211, 238, 0.6);
+1305:                     transform: translate(-50%, -50%) scale(1.05);
+1306:                 }
+1307:                 #slide-15 .sec-node.active {
+1308:                     border-color: #22D3EE;
+1309:                     box-shadow: 0 0 25px rgba(34, 211, 238, 0.6);
+1310:                     transform: translate(-50%, -50%) scale(1.15);
+1311:                     background: rgba(15, 30, 55, 1);
+1312:                 }
+1313:                 #slide-15 .sec-node.amber {
+1314:                     border-color: rgba(245, 158, 11, 0.5);
+1315:                 }
+1316:                 #slide-15 .sec-node.amber.active {
+1317:                     border-color: #F59E0B;
+1318:                     box-shadow: 0 0 25px rgba(245, 158, 11, 0.6);
+1319:                 }
+1320:                 #slide-15 .sec-label {
+1321:                     position: absolute;
+1322:                     color: white; font-size: 0.9rem; font-weight: 600;
+1323:                     white-space: nowrap; pointer-events: none;
+1324:                     text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+1325:                     transition: color 0.3s;
+1326:                 }
+1327:                 #slide-15 .sec-node.active .sec-label {
+1328:                     color: #22D3EE;
+1329:                 }
+1330:                 #slide-15 .sec-node.amber.active .sec-label {
+1331:                     color: #F59E0B;
+1332:                 }
+1333:                 #slide-15 .sec-panel {
+1334:                     background: rgba(15, 30, 55, 0.8);
+1335:                     border: 1px solid rgba(255, 255, 255, 0.1);
+1336:                     border-radius: 12px;
+1337:                     padding: 30px;
+1338:                     transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+1339:                     backdrop-filter: blur(10px);
+1340:                 }
+1341:                 #slide-15 #sec-panel-default {
+1342:                     text-align: center;
+1343:                 }
+1344:                 #slide-15 #sec-panel-content {
+1345:                     display: none;
+1346:                     opacity: 0;
+1347:                     transform: translateY(15px);
+1348:                 }
+1349:                 #slide-15 #sec-panel-content.visible {
+1350:                     opacity: 1;
+1351:                     transform: translateY(0);
+1352:                 }
+1353:                 #slide-15 .sec-panel-close {
+1354:                     margin-top: 25px;
+1355:                     padding: 10px 20px;
+1356:                     background: rgba(255,255,255,0.05);
+1357:                     border: 1px solid rgba(255,255,255,0.2);
+1358:                     color: white;
+1359:                     border-radius: 6px;
+1360:                     cursor: pointer;
+1361:                     font-size: 0.95rem;
+1362:                     transition: all 0.2s;
+1363:                     width: 100%;
+1364:                 }
+1365:                 #slide-15 .sec-panel-close:hover {
+1366:                     background: rgba(255,255,255,0.15);
+1367:                     border-color: rgba(34, 211, 238, 0.5);
+1368:                 }
+1369:                 @media (max-width: 900px) {
+1370:                     #slide-15 .security-container {
+1371:                         flex-direction: column;
+1372:                         gap: 20px;
+1373:                     }
+1374:                     #slide-15 .diagram-area {
+1375:                         width: 100%;
+1376:                         height: auto;
+1377:                         display: flex;
+1378:                         flex-direction: column;
+1379:                         gap: 12px;
+1380:                     }
+1381:                     #slide-15 .diagram-area svg { display: none; }
+1382:                     #slide-15 .sec-core {
+1383:                         position: relative; top: 0; left: 0; transform: none;
+1384:                         margin: 0 auto 15px auto;
+1385:                         width: 100px; height: 100px;
+1386:                     }
+1387:                     #slide-15 .sec-node {
+1388:                         position: relative; top: auto !important; left: auto !important; transform: none !important;
+1389:                         width: 100%; height: auto;
+1390:                         border-radius: 12px;
+1391:                         padding: 15px 20px;
+1392:                         justify-content: flex-start;
+1393:                     }
+1394:                     #slide-15 .sec-node:hover {
+1395:                         transform: scale(1.02) !important;
+1396:                     }
+1397:                     #slide-15 .sec-node.active {
+1398:                         transform: scale(1.02) !important;
+1399:                     }
+1400:                     #slide-15 .sec-label {
+1401:                         position: relative; top: auto !important; left: auto !important; right: auto !important; bottom: auto !important;
+1402:                         margin-left: 20px;
+1403:                         font-size: 1.1rem;
+1404:                     }
+1405:                     #slide-15 #sec-panel-content {
+1406:                         margin-top: 5px; margin-bottom: 15px;
+1407:                     }
+1408:                 }
+1409:             </style>
+1410: 
+1411:             <div class="security-container">
+1412:                 <!-- Interactive Diagram -->
+1413:                 <div class="diagram-area" id="sec-diagram">
+1414:                     <svg width="100%" height="100%" style="position:absolute; top:0; left:0; z-index: 1; pointer-events: none;">
+1415:                         <g stroke="rgba(34, 211, 238, 0.2)" stroke-width="2" fill="none">
+1416:                             <line x1="50%" y1="50%" x2="50%" y2="8%" />
+1417:                             <line x1="50%" y1="50%" x2="90%" y2="38%" />
+1418:                             <line x1="50%" y1="50%" x2="75%" y2="85%" />
+1419:                             <line x1="50%" y1="50%" x2="25%" y2="85%" />
+1420:                             <line x1="50%" y1="50%" x2="10%" y2="38%" />
+1421:                         </g>
+1422:                         <g fill="rgba(34, 211, 238, 0.8)">
+1423:                             <circle r="4"><animate attributeName="cy" values="50%;8%;50%" dur="3s" repeatCount="indefinite" /><animate attributeName="cx" values="50%;50%;50%" dur="3s" repeatCount="indefinite" /></circle>
+1424:                             <circle r="4"><animate attributeName="cx" values="50%;90%;50%" dur="3.5s" repeatCount="indefinite" /><animate attributeName="cy" values="50%;38%;50%" dur="3.5s" repeatCount="indefinite" /></circle>
+1425:                             <circle r="4" fill="rgba(245, 158, 11, 0.8)"><animate attributeName="cx" values="50%;75%;50%" dur="2.8s" repeatCount="indefinite" /><animate attributeName="cy" values="50%;85%;50%" dur="2.8s" repeatCount="indefinite" /></circle>
+1426:                             <circle r="4" fill="rgba(245, 158, 11, 0.8)"><animate attributeName="cx" values="50%;25%;50%" dur="3.2s" repeatCount="indefinite" /><animate attributeName="cy" values="50%;85%;50%" dur="3.2s" repeatCount="indefinite" /></circle>
+1427:                             <circle r="4"><animate attributeName="cx" values="50%;10%;50%" dur="4s" repeatCount="indefinite" /><animate attributeName="cy" values="50%;38%;50%" dur="4s" repeatCount="indefinite" /></circle>
+1428:                         </g>
+1429:                     </svg>
+1430: 
+1431:                     <div class="sec-core">
+1432:                         <span style="font-size: 2.5rem; text-shadow: 0 0 15px rgba(34, 211, 238, 0.8);">🛡️</span>
+1433:                         <span style="font-size: 0.75rem; color: #F8FAFC; margin-top: 5px; font-weight: bold; text-align: center; letter-spacing: 1px;">SECURITY<br>CORE</span>
+1434:                     </div>
+1435: 
+1436:                     <!-- Nodes -->
+1437:                     <div class="sec-node" style="top: 8%; left: 50%;" onclick="showSecDetail('auth', this)">
+1438:                         👤 <div class="sec-label" style="top: -28px;">Authentication</div>
+1439:                     </div>
+1440:                     <div class="sec-node" style="top: 38%; left: 90%;" onclick="showSecDetail('authz', this)">
+1441:                         🔑 <div class="sec-label" style="top: -28px; left: 50%; transform: translateX(-50%);">Authorization</div>
+1442:                     </div>
+1443:                     <div class="sec-node amber" style="top: 85%; left: 75%;" onclick="showSecDetail('data', this)">
+1444:                         🔒 <div class="sec-label" style="top: 75px;">Data Protection</div>
+1445:                     </div>
+1446:                     <div class="sec-node amber" style="top: 85%; left: 25%;" onclick="showSecDetail('func', this)">
+1447:                         ⚡ <div class="sec-label" style="top: 75px;">Function Security</div>
+1448:                     </div>
+1449:                     <div class="sec-node" style="top: 38%; left: 10%;" onclick="showSecDetail('mon', this)">
+1450:                         📊 <div class="sec-label" style="right: 75px;">Monitoring</div>
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

@@ -1,0 +1,109 @@
+Created At: 2026-09-12T13:44:49Z
+Completed At: 2026-09-12T13:44:49Z
+File Path: `file:///c:/Users/johnl/OneDrive/Desktop/EMERGING%20REPORT/index.html`
+Total Lines: 2923
+Total Bytes: 187589
+Showing lines 1140 to 1240
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1140: 
+1141:         <!-- ============================================ -->
+1142:         <!-- SLIDE 13: ADVANTAGES -->
+1143:         <!-- ============================================ -->
+1144:         <div class="slide" id="slide-13" style="justify-content: center;">
+1145:             <h2 style="text-align: center; border-bottom: none; margin-bottom: 30px;">Advantages of Serverless</h2>
+1146:             
+1147:             <div class="two-column" style="margin: 0 auto; max-width: 1100px; gap: 40px; align-items: stretch;">
+1148:                 
+1149:                 <!-- Advantages List (Left) -->
+1150:                 <div style="flex: 1; display: flex; flex-direction: column; gap: 15px;">
+1151:                     <div class="glass-card" style="padding: 15px 20px; opacity: 0; animation: fadeSlideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; animation-delay: 0.3s; text-align: left;">
+1152:                         <h4 style="margin: 0 0 5px 0; color: white; display: flex; align-items: center; gap: 12px; font-size: 1.1rem;"><span style="font-size:1.5rem;">📈</span> Automatic Scaling</h4>
+1153:                         <p style="margin: 0 0 0 38px; font-size: 0.95rem; color: var(--muted);">Handles changes in demand automatically.</p>
+1154:                     </div>
+1155:                     
+1156:                     <div class="glass-card" style="padding: 15px 20px; opacity: 0; animation: fadeSlideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; animation-delay: 0.5s; text-align: left;">
+1157:                         <h4 style="margin: 0 0 5px 0; color: white; display: flex; align-items: center; gap: 12px; font-size: 1.1rem;"><span style="font-size:1.5rem;">🛡️</span> Less Server Management</h4>
+1158:                         <p style="margin: 0 0 0 38px; font-size: 0.95rem; color: var(--muted);">The provider manages the infrastructure.</p>
+1159:                     </div>
+1160:                     
+1161:                     <div class="glass-card" style="padding: 15px 20px; opacity: 0; animation: fadeSlideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; animation-delay: 0.7s; text-align: left;">
+1162:                         <h4 style="margin: 0 0 5px 0; color: white; display: flex; align-items: center; gap: 12px; font-size: 1.1rem;"><span style="font-size:1.5rem;">🚀</span> Faster Development</h4>
+1163:                         <p style="margin: 0 0 0 38px; font-size: 0.95rem; color: var(--muted);">Developers focus on application code.</p>
+1164:                     </div>
+1165:                     
+1166:                     <div class="glass-card" style="padding: 15px 20px; opacity: 0; animation: fadeSlideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; animation-delay: 0.9s; text-align: left;">
+1167:                         <h4 style="margin: 0 0 5px 0; color: white; display: flex; align-items: center; gap: 12px; font-size: 1.1rem;"><span style="font-size:1.5rem;">💰</span> Usage-Based Cost</h4>
+1168:                         <p style="margin: 0 0 0 38px; font-size: 0.95rem; color: var(--muted);">Pay mainly for resources used.</p>
+1169:                     </div>
+1170:                     
+1171:                     <div class="glass-card" style="padding: 15px 20px; opacity: 0; animation: fadeSlideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; animation-delay: 1.1s; text-align: left;">
+1172:                         <h4 style="margin: 0 0 5px 0; color: white; display: flex; align-items: center; gap: 12px; font-size: 1.1rem;"><span style="font-size:1.5rem;">🔌</span> Easy Cloud Integration</h4>
+1173:                         <p style="margin: 0 0 0 38px; font-size: 0.95rem; color: var(--muted);">Connects easily with cloud services and APIs.</p>
+1174:                     </div>
+1175:                 </div>
+1176: 
+1177:                 <!-- Generated Image (Right) -->
+1178:                 <div style="flex: 1; display: flex; align-items: stretch; opacity: 0; animation: fadeSlideUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; animation-delay: 0.1s;">
+1179:                     <div class="glass-card" style="padding: 15px; width: 100%; display: flex; align-items: center; justify-content: center; overflow: hidden; border-radius: 16px;">
+1180:                         <img src="C:/Users/johnl/.gemini/antigravity-ide/brain/a819ae44-22c0-445d-89ba-e9590dc49652/advantages_of_serverless_1789216121624.png" 
+1181:                              alt="Advantages of Serverless" 
+1182:                              style="width: 100%; height: auto; border-radius: 8px; object-fit: cover;">
+1183:                     </div>
+1184:                 </div>
+1185: 
+1186:             </div>
+1187:         </div>
+1188: 
+1189:         <!-- ============================================ -->
+1190:         <!-- SLIDE 14: LIMITATIONS -->
+1191:         <!-- ============================================ -->
+1192:         <div class="slide" id="slide-14" style="justify-content: center;">
+1193:             <h2 style="text-align: center; border-bottom: none; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 2px;">Limitations of Serverless</h2>
+1194:             
+1195:             <div class="two-column" style="margin: 0 auto; max-width: 1100px; gap: 40px; align-items: stretch;">
+1196:                 
+1197:                 <!-- Generated Image (Left) -->
+1198:                 <div style="flex: 1; display: flex; align-items: stretch; opacity: 0; animation: fadeSlideUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; animation-delay: 0.1s;">
+1199:                     <div class="glass-card" style="padding: 15px; width: 100%; display: flex; align-items: center; justify-content: center; overflow: hidden; border-radius: 16px;">
+1200:                         <img src="C:/Users/johnl/.gemini/antigravity-ide/brain/a819ae44-22c0-445d-89ba-e9590dc49652/serverless_limitations_1789216344744.png" 
+1201:                              alt="Limitations of Serverless" 
+1202:                              style="width: 100%; height: auto; border-radius: 8px; object-fit: cover;">
+1203:                     </div>
+1204:                 </div>
+1205: 
+1206:                 <!-- Limitations List (Right) -->
+1207:                 <div style="flex: 1; display: flex; flex-direction: column; gap: 15px;">
+1208:                     <div class="glass-card" style="padding: 15px 20px; opacity: 0; animation: fadeSlideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; animation-delay: 0.3s; text-align: left; border-left: 3px solid rgba(245,158,11,0.5);">
+1209:                         <h4 style="margin: 0 0 5px 0; color: white; display: flex; align-items: center; gap: 12px; font-size: 1.1rem;"><span style="font-size:1.5rem;">❄️</span> Cold Starts</h4>
+1210:                         <p style="margin: 0 0 0 38px; font-size: 0.95rem; color: var(--muted);">Functions may take extra time to start after being inactive.</p>
+1211:                     </div>
+1212:                     
+1213:                     <div class="glass-card" style="padding: 15px 20px; opacity: 0; animation: fadeSlideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; animation-delay: 0.5s; text-align: left; border-left: 3px solid rgba(245,158,11,0.5);">
+1214:                         <h4 style="margin: 0 0 5px 0; color: white; display: flex; align-items: center; gap: 12px; font-size: 1.1rem;"><span style="font-size:1.5rem;">⏱️</span> Execution Limits</h4>
+1215:                         <p style="margin: 0 0 0 38px; font-size: 0.95rem; color: var(--muted);">Functions usually have limits on runtime, memory, and processing.</p>
+1216:                     </div>
+1217:                     
+1218:                     <div class="glass-card" style="padding: 15px 20px; opacity: 0; animation: fadeSlideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; animation-delay: 0.7s; text-align: left; border-left: 3px solid rgba(245,158,11,0.5);">
+1219:                         <h4 style="margin: 0 0 5px 0; color: white; display: flex; align-items: center; gap: 12px; font-size: 1.1rem;"><span style="font-size:1.5rem;">⚙️</span> Less Control</h4>
+1220:                         <p style="margin: 0 0 0 38px; font-size: 0.95rem; color: var(--muted);">Developers have less control over the underlying servers.</p>
+1221:                     </div>
+1222:                     
+1223:                     <div class="glass-card" style="padding: 15px 20px; opacity: 0; animation: fadeSlideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; animation-delay: 0.9s; text-align: left; border-left: 3px solid rgba(245,158,11,0.5);">
+1224:                         <h4 style="margin: 0 0 5px 0; color: white; display: flex; align-items: center; gap: 12px; font-size: 1.1rem;"><span style="font-size:1.5rem;">🔒</span> Vendor Lock-In</h4>
+1225:                         <p style="margin: 0 0 0 38px; font-size: 0.95rem; color: var(--muted);">Applications may become dependent on one cloud provider.</p>
+1226:                     </div>
+1227:                     
+1228:                     <div class="glass-card" style="padding: 15px 20px; opacity: 0; animation: fadeSlideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; animation-delay: 1.1s; text-align: left; border-left: 3px solid rgba(245,158,11,0.5);">
+1229:                         <h4 style="margin: 0 0 5px 0; color: white; display: flex; align-items: center; gap: 12px; font-size: 1.1rem;"><span style="font-size:1.5rem;">🐛</span> Debugging Challenges</h4>
+1230:                         <p style="margin: 0 0 0 38px; font-size: 0.95rem; color: var(--muted);">Distributed functions can be harder to monitor and troubleshoot.</p>
+1231:                     </div>
+1232:                 </div>
+1233: 
+1234:             </div>
+1235:         </div>
+1236: 
+1237:         <!-- ============================================ -->
+1238:         <!-- SLIDE 15: SERVERLESS SECURITY -->
+1239:         <!-- ============================================ -->
+1240:         <div class="slide" id="slide-15" style="justify-content: flex-start; padding-top: 40px;">
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.
