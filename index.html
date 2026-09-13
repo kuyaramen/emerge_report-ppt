@@ -30,6 +30,11 @@
                                 <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.13  0 0 0 0 0.83  0 0 0 0 0.93  0 0 0 0.35 0" result="glow"/>
                                 <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
                             </filter>
+                            <filter id="nodeGlow" x="-100%" y="-100%" width="300%" height="300%">
+                                <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+                                <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.13  0 0 0 0 0.83  0 0 0 0 0.93  0 0 0 0.7 0" result="glow"/>
+                                <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
+                            </filter>
                             <radialGradient id="cloudFill" cx="50%" cy="35%" r="60%">
                                 <stop offset="0%" stop-color="rgba(34,211,238,0.22)"/>
                                 <stop offset="60%" stop-color="rgba(37,99,235,0.12)"/>
@@ -41,6 +46,68 @@
                                 <stop offset="100%" stop-color="#22D3EE" stop-opacity="0.6"/>
                             </linearGradient>
                         </defs>
+
+                        <!-- ===== Incoming Connection Lines ===== -->
+                        <!-- Left Line to Cloud -->
+                        <line x1="40" y1="80" x2="180" y2="115" stroke="#22D3EE" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.4"/>
+                        <!-- Right Line to Cloud -->
+                        <line x1="460" y1="80" x2="320" y2="115" stroke="#22D3EE" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.4"/>
+                        <!-- Top Line to Cloud -->
+                        <line x1="250" y1="20" x2="250" y2="100" stroke="#22D3EE" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.3"/>
+
+                        <!-- ===== Animated Data Nodes (Slide 6 Style) ===== -->
+                        
+                        <!-- === Left Line: 3 nodes moving toward cloud === -->
+                        <circle r="4.5" fill="#22D3EE" filter="url(#nodeGlow)">
+                            <animate attributeName="cx" values="40;180" dur="2s" begin="0s" repeatCount="indefinite"/>
+                            <animate attributeName="cy" values="80;115" dur="2s" begin="0s" repeatCount="indefinite"/>
+                            <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.8;1" dur="2s" begin="0s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle r="3.5" fill="#60A5FA" filter="url(#nodeGlow)">
+                            <animate attributeName="cx" values="40;180" dur="2s" begin="0.6s" repeatCount="indefinite"/>
+                            <animate attributeName="cy" values="80;115" dur="2s" begin="0.6s" repeatCount="indefinite"/>
+                            <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.8;1" dur="2s" begin="0.6s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle r="4" fill="#22D3EE" filter="url(#nodeGlow)">
+                            <animate attributeName="cx" values="40;180" dur="2s" begin="1.2s" repeatCount="indefinite"/>
+                            <animate attributeName="cy" values="80;115" dur="2s" begin="1.2s" repeatCount="indefinite"/>
+                            <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.8;1" dur="2s" begin="1.2s" repeatCount="indefinite"/>
+                        </circle>
+
+                        <!-- === Right Line: 3 nodes moving toward cloud === -->
+                        <circle r="4.5" fill="#22D3EE" filter="url(#nodeGlow)">
+                            <animate attributeName="cx" values="460;320" dur="2.2s" begin="0.3s" repeatCount="indefinite"/>
+                            <animate attributeName="cy" values="80;115" dur="2.2s" begin="0.3s" repeatCount="indefinite"/>
+                            <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.8;1" dur="2.2s" begin="0.3s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle r="3.5" fill="#60A5FA" filter="url(#nodeGlow)">
+                            <animate attributeName="cx" values="460;320" dur="2.2s" begin="0.9s" repeatCount="indefinite"/>
+                            <animate attributeName="cy" values="80;115" dur="2.2s" begin="0.9s" repeatCount="indefinite"/>
+                            <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.8;1" dur="2.2s" begin="0.9s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle r="4" fill="#22D3EE" filter="url(#nodeGlow)">
+                            <animate attributeName="cx" values="460;320" dur="2.2s" begin="1.5s" repeatCount="indefinite"/>
+                            <animate attributeName="cy" values="80;115" dur="2.2s" begin="1.5s" repeatCount="indefinite"/>
+                            <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.8;1" dur="2.2s" begin="1.5s" repeatCount="indefinite"/>
+                        </circle>
+
+                        <!-- === Top Line: 2 nodes moving toward cloud === -->
+                        <circle r="4" fill="#22D3EE" filter="url(#nodeGlow)">
+                            <animate attributeName="cx" values="250;250" dur="1.8s" begin="0.5s" repeatCount="indefinite"/>
+                            <animate attributeName="cy" values="20;100" dur="1.8s" begin="0.5s" repeatCount="indefinite"/>
+                            <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.8;1" dur="1.8s" begin="0.5s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle r="3.5" fill="#60A5FA" filter="url(#nodeGlow)">
+                            <animate attributeName="cx" values="250;250" dur="1.8s" begin="1.1s" repeatCount="indefinite"/>
+                            <animate attributeName="cy" values="20;100" dur="1.8s" begin="1.1s" repeatCount="indefinite"/>
+                            <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.8;1" dur="1.8s" begin="1.1s" repeatCount="indefinite"/>
+                        </circle>
+
+                        <!-- ===== Cloud Pulse Animation ===== -->
+                        <g>
+                            <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" begin="0s" repeatCount="indefinite"/>
+                            <ellipse cx="233" cy="92" rx="95" ry="55" fill="rgba(34,211,238,0.05)" opacity="0.5"/>
+                        </g>
 
                         <!-- Back cloud layer (depth) -->
                         <path d="M175 145
@@ -76,33 +143,110 @@
                         <line x1="250" y1="150" x2="250" y2="210" stroke="#22D3EE" stroke-width="1.2" stroke-dasharray="4,4" opacity="0.6"/>
                         <line x1="290" y1="150" x2="360" y2="210" stroke="#2563EB" stroke-width="1.2" stroke-dasharray="4,4" opacity="0.5"/>
 
+                        <!-- ===== Animated Nodes on Component Lines ===== -->
+                        
+                        <!-- === Server Line: 2 nodes moving from Server to Cloud === -->
+                        <circle r="4" fill="#22D3EE" filter="url(#nodeGlow)">
+                            <animate attributeName="cx" values="140;210" dur="2.5s" begin="0.8s" repeatCount="indefinite"/>
+                            <animate attributeName="cy" values="210;150" dur="2.5s" begin="0.8s" repeatCount="indefinite"/>
+                            <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.8;1" dur="2.5s" begin="0.8s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle r="3.5" fill="#60A5FA" filter="url(#nodeGlow)">
+                            <animate attributeName="cx" values="140;210" dur="2.5s" begin="1.8s" repeatCount="indefinite"/>
+                            <animate attributeName="cy" values="210;150" dur="2.5s" begin="1.8s" repeatCount="indefinite"/>
+                            <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.8;1" dur="2.5s" begin="1.8s" repeatCount="indefinite"/>
+                        </circle>
+
+                        <!-- === Database Line: 2 nodes moving from Database to Cloud === -->
+                        <circle r="4" fill="#22D3EE" filter="url(#nodeGlow)">
+                            <animate attributeName="cx" values="250;250" dur="2.3s" begin="1.2s" repeatCount="indefinite"/>
+                            <animate attributeName="cy" values="210;150" dur="2.3s" begin="1.2s" repeatCount="indefinite"/>
+                            <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.8;1" dur="2.3s" begin="1.2s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle r="3.5" fill="#60A5FA" filter="url(#nodeGlow)">
+                            <animate attributeName="cx" values="250;250" dur="2.3s" begin="2.0s" repeatCount="indefinite"/>
+                            <animate attributeName="cy" values="210;150" dur="2.3s" begin="2.0s" repeatCount="indefinite"/>
+                            <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.8;1" dur="2.3s" begin="2.0s" repeatCount="indefinite"/>
+                        </circle>
+
+                        <!-- === Function Line: 2 nodes moving from Function to Cloud === -->
+                        <circle r="4" fill="#22D3EE" filter="url(#nodeGlow)">
+                            <animate attributeName="cx" values="360;290" dur="2.4s" begin="1.6s" repeatCount="indefinite"/>
+                            <animate attributeName="cy" values="210;150" dur="2.4s" begin="1.6s" repeatCount="indefinite"/>
+                            <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.8;1" dur="2.4s" begin="1.6s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle r="3.5" fill="#60A5FA" filter="url(#nodeGlow)">
+                            <animate attributeName="cx" values="360;290" dur="2.4s" begin="2.4s" repeatCount="indefinite"/>
+                            <animate attributeName="cy" values="210;150" dur="2.4s" begin="2.4s" repeatCount="indefinite"/>
+                            <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.8;1" dur="2.4s" begin="2.4s" repeatCount="indefinite"/>
+                        </circle>
+
                         <!-- Small glowing dots on the lines -->
                         <circle cx="175" cy="180" r="2" fill="#2563EB" opacity="0.5"/>
                         <circle cx="250" cy="180" r="2" fill="#22D3EE" opacity="0.5"/>
                         <circle cx="325" cy="180" r="2" fill="#2563EB" opacity="0.5"/>
 
                         <!-- ===== Icon 1: Server Rack (left) ===== -->
-                        <rect x="118" y="210" width="44" height="56" rx="5" fill="rgba(11,31,53,0.9)" stroke="#22D3EE" stroke-width="1.2"/>
-                        <line x1="124" y1="224" x2="156" y2="224" stroke="#22D3EE" stroke-width="0.8" opacity="0.5"/>
-                        <line x1="124" y1="236" x2="156" y2="236" stroke="#22D3EE" stroke-width="0.8" opacity="0.5"/>
-                        <line x1="124" y1="248" x2="156" y2="248" stroke="#22D3EE" stroke-width="0.8" opacity="0.5"/>
-                        <circle cx="152" cy="218" r="2" fill="#22D3EE" opacity="0.8"/>
-                        <circle cx="152" cy="230" r="2" fill="#2563EB" opacity="0.8"/>
-                        <circle cx="152" cy="242" r="2" fill="#22D3EE" opacity="0.8"/>
-                        <circle cx="152" cy="254" r="2" fill="#60A5FA" opacity="0.6"/>
-                        <text x="140" y="282" fill="var(--muted)" font-size="11" text-anchor="middle" font-family="Inter, sans-serif">Server</text>
+                        <g id="server-icon">
+                            <rect x="118" y="210" width="44" height="56" rx="5" fill="rgba(11,31,53,0.9)" stroke="#22D3EE" stroke-width="1.2">
+                                <animate attributeName="stroke" values="#22D3EE;#60A5FA;#22D3EE" dur="3s" begin="0s" repeatCount="indefinite"/>
+                                <animate attributeName="stroke-width" values="1.2;2;1.2" dur="3s" begin="0s" repeatCount="indefinite"/>
+                            </rect>
+                            <line x1="124" y1="224" x2="156" y2="224" stroke="#22D3EE" stroke-width="0.8" opacity="0.5">
+                                <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" begin="0s" repeatCount="indefinite"/>
+                            </line>
+                            <line x1="124" y1="236" x2="156" y2="236" stroke="#22D3EE" stroke-width="0.8" opacity="0.5">
+                                <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+                            </line>
+                            <line x1="124" y1="248" x2="156" y2="248" stroke="#22D3EE" stroke-width="0.8" opacity="0.5">
+                                <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" begin="1s" repeatCount="indefinite"/>
+                            </line>
+                            <circle cx="152" cy="218" r="2" fill="#22D3EE" opacity="0.8">
+                                <animate attributeName="opacity" values="0.8;1;0.8" dur="1.5s" begin="0s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="152" cy="230" r="2" fill="#2563EB" opacity="0.8">
+                                <animate attributeName="opacity" values="0.8;1;0.8" dur="1.5s" begin="0.3s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="152" cy="242" r="2" fill="#22D3EE" opacity="0.8">
+                                <animate attributeName="opacity" values="0.8;1;0.8" dur="1.5s" begin="0.6s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="152" cy="254" r="2" fill="#60A5FA" opacity="0.6">
+                                <animate attributeName="opacity" values="0.6;1;0.6" dur="1.5s" begin="0.9s" repeatCount="indefinite"/>
+                            </circle>
+                            <text x="140" y="282" fill="var(--muted)" font-size="11" text-anchor="middle" font-family="Inter, sans-serif">Server</text>
+                        </g>
 
                         <!-- ===== Icon 2: Database (center) ===== -->
-                        <ellipse cx="250" cy="216" rx="24" ry="9" fill="rgba(11,31,53,0.9)" stroke="#22D3EE" stroke-width="1.2"/>
-                        <path d="M226 216 L226 252 Q226 261 250 261 Q274 261 274 252 L274 216" fill="rgba(11,31,53,0.9)" stroke="#22D3EE" stroke-width="1.2"/>
-                        <ellipse cx="250" cy="252" rx="24" ry="9" fill="none" stroke="#22D3EE" stroke-width="0.8" opacity="0.4"/>
-                        <ellipse cx="250" cy="234" rx="24" ry="9" fill="none" stroke="#22D3EE" stroke-width="0.8" opacity="0.25"/>
-                        <text x="250" y="282" fill="var(--muted)" font-size="11" text-anchor="middle" font-family="Inter, sans-serif">Database</text>
+                        <g id="database-icon">
+                            <ellipse cx="250" cy="216" rx="24" ry="9" fill="rgba(11,31,53,0.9)" stroke="#22D3EE" stroke-width="1.2">
+                                <animate attributeName="stroke" values="#22D3EE;#60A5FA;#22D3EE" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+                                <animate attributeName="stroke-width" values="1.2;2;1.2" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+                            </ellipse>
+                            <path d="M226 216 L226 252 Q226 261 250 261 Q274 261 274 252 L274 216" fill="rgba(11,31,53,0.9)" stroke="#22D3EE" stroke-width="1.2">
+                                <animate attributeName="stroke" values="#22D3EE;#60A5FA;#22D3EE" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+                                <animate attributeName="stroke-width" values="1.2;2;1.2" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+                            </path>
+                            <ellipse cx="250" cy="252" rx="24" ry="9" fill="none" stroke="#22D3EE" stroke-width="0.8" opacity="0.4">
+                                <animate attributeName="opacity" values="0.4;0.7;0.4" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+                            </ellipse>
+                            <ellipse cx="250" cy="234" rx="24" ry="9" fill="none" stroke="#22D3EE" stroke-width="0.8" opacity="0.25">
+                                <animate attributeName="opacity" values="0.25;0.5;0.25" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+                            </ellipse>
+                            <text x="250" y="282" fill="var(--muted)" font-size="11" text-anchor="middle" font-family="Inter, sans-serif">Database</text>
+                        </g>
 
                         <!-- ===== Icon 3: Function / Lambda (right) ===== -->
-                        <rect x="338" y="210" width="44" height="56" rx="5" fill="rgba(11,31,53,0.9)" stroke="#2563EB" stroke-width="1.2"/>
-                        <text x="360" y="246" fill="#22D3EE" font-size="26" text-anchor="middle" font-family="monospace" opacity="0.9">λ</text>
-                        <text x="360" y="282" fill="var(--muted)" font-size="11" text-anchor="middle" font-family="Inter, sans-serif">Function</text>
+                        <g id="function-icon">
+                            <rect x="338" y="210" width="44" height="56" rx="5" fill="rgba(11,31,53,0.9)" stroke="#2563EB" stroke-width="1.2">
+                                <animate attributeName="stroke" values="#2563EB;#22D3EE;#2563EB" dur="3s" begin="1s" repeatCount="indefinite"/>
+                                <animate attributeName="stroke-width" values="1.2;2;1.2" dur="3s" begin="1s" repeatCount="indefinite"/>
+                            </rect>
+                            <text x="360" y="246" fill="#22D3EE" font-size="26" text-anchor="middle" font-family="monospace" opacity="0.9">
+                                <animate attributeName="opacity" values="0.9;1;0.9" dur="2s" begin="1s" repeatCount="indefinite"/>
+                                <animate attributeName="fill" values="#22D3EE;#60A5FA;#22D3EE" dur="3s" begin="1s" repeatCount="indefinite"/>
+                            </text>
+                            <text x="360" y="282" fill="var(--muted)" font-size="11" text-anchor="middle" font-family="Inter, sans-serif">Function</text>
+                        </g>
 
                         <!-- Horizontal connection line between icons -->
                         <line x1="162" y1="238" x2="226" y2="238" stroke="#2563EB" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.3"/>
@@ -1215,6 +1359,9 @@
             </script>
         </div>
 
+        <!-- ============================================ -->
+        <!-- SLIDE 9: BaaS -->
+        <!-- ============================================ -->
                 <div class="slide" id="slide-9" style="justify-content: flex-start; padding-top: 15px; position: relative;">
             <h2 style="text-align: center; border-bottom: none; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 2px;">Backend as a Service — BaaS</h2>
             <p style="text-align: center; color: var(--muted); max-width: 900px; margin: 0 auto 10px auto; font-size: 0.95rem;">
@@ -2654,6 +2801,9 @@
             </script>
         </div>
 
+        <!-- ============================================ -->
+        <!-- SLIDE 18: REAL-WORLD APPLICATIONS -->
+        <!-- ============================================ -->
         <div class="slide" id="slide-18" style="justify-content: flex-start; padding-top: 40px;">
             <h2 style="text-align: center; border-bottom: none; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px;">Real-World Applications</h2>
             <p style="text-align: center; color: var(--muted); max-width: 900px; margin: 0 auto 30px auto; font-size: 1.05rem;">
@@ -3147,167 +3297,198 @@
         </div>
 
         <!-- ============================================ -->
-        <!-- SLIDE 20: SDN PRIME EXAMPLE -->
+        <!-- SLIDE 20: ONLINE SHOPPING EXAMPLE -->
         <!-- ============================================ -->
-        <div class="slide" id="slide-20" style="justify-content: flex-start; padding-top: 40px;">
-            <h2 style="text-align: center; border-bottom: none; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px;">SDN PRIME — Serverless Example</h2>
-            <p style="text-align: center; color: var(--muted); max-width: 900px; margin: 0 auto 30px auto; font-size: 1.05rem;">
-                How a serverless function could work in the SDN PRIME website.
+        <div class="slide" id="slide-20" style="justify-content: flex-start; padding-top: 36px;">
+            <h2 style="text-align: center; border-bottom: none; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 2px;">SERVERLESS EXAMPLE — ONLINE SHOPPING SYSTEM</h2>
+            <p style="text-align: center; color: var(--muted); max-width: 900px; margin: 0 auto 24px auto; font-size: 1rem;">
+                How serverless functions could process an online shopping order.
             </p>
 
             <style>
-                #slide-20 .sdn-layout { display: flex; flex-direction: column; width: 100%; max-width: 1000px; margin: 0 auto; flex: 1; gap: 25px; }
+                #slide-20 .shopping-layout { display: flex; flex-direction: column; width: 100%; max-width: 1100px; margin: 0 auto; flex: 1; gap: 20px; }
                 
-                #slide-20 .sdn-flow {
+                #slide-20 .shopping-flow {
                     display: flex; align-items: center; justify-content: center; gap: 0; position: relative;
                 }
-                #slide-20 .sdn-step {
-                    display: flex; flex-direction: column; align-items: center; gap: 10px; cursor: pointer;
-                    transition: all 0.3s ease; z-index: 5; width: 120px;
+                #slide-20 .shopping-step {
+                    display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer;
+                    transition: all 0.3s ease; z-index: 5; width: 110px;
                 }
-                #slide-20 .sdn-icon {
-                    width: 70px; height: 70px; border-radius: 16px;
-                    background: rgba(15, 30, 55, 0.95); border: 2px solid rgba(255,255,255,0.2);
-                    display: flex; align-items: center; justify-content: center; font-size: 1.8rem;
-                    transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+                #slide-20 .shopping-icon {
+                    width: 65px; height: 65px; border-radius: 12px;
+                    background: rgba(15, 30, 55, 0.95); border: 2px solid rgba(34,211,238,0.3);
+                    display: flex; align-items: center; justify-content: center; font-size: 1.6rem;
+                    transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
                 }
-                #slide-20 .sdn-step-label {
-                    color: white; font-size: 0.85rem; font-weight: 600; text-align: center;
-                    transition: color 0.3s;
+                #slide-20 .shopping-step-label {
+                    color: white; font-size: 0.8rem; font-weight: 600; text-align: center;
+                    transition: color 0.3s; line-height: 1.2;
                 }
-                #slide-20 .sdn-arrow {
-                    font-size: 1.5rem; color: rgba(255,255,255,0.2); margin: 0 10px; flex-shrink: 0;
+                #slide-20 .shopping-arrow {
+                    font-size: 1.4rem; color: rgba(34,211,238,0.3); margin: 0 8px; flex-shrink: 0;
                     transition: color 0.5s;
                 }
-                #slide-20 .sdn-arrow.lit { color: #22D3EE; text-shadow: 0 0 10px rgba(34,211,238,0.6); }
+                #slide-20 .shopping-arrow.lit { color: #22D3EE; text-shadow: 0 0 10px rgba(34,211,238,0.6); }
 
-                #slide-20 .sdn-step.active .sdn-icon {
-                    border-color: #22D3EE; box-shadow: 0 0 25px rgba(34,211,238,0.6); transform: scale(1.15);
+                #slide-20 .shopping-step.active .shopping-icon {
+                    border-color: #22D3EE; box-shadow: 0 0 25px rgba(34,211,238,0.5); transform: scale(1.1);
                 }
-                #slide-20 .sdn-step.active .sdn-step-label { color: #22D3EE; }
-                #slide-20 .sdn-step.highlight .sdn-icon {
-                    border-color: #F59E0B; box-shadow: 0 0 25px rgba(245,158,11,0.6);
+                #slide-20 .shopping-step.active .shopping-step-label { color: #22D3EE; }
+                #slide-20 .shopping-step.highlight .shopping-icon {
+                    border-color: #F59E0B; box-shadow: 0 0 25px rgba(245,158,11,0.5);
                 }
-                #slide-20 .sdn-step.highlight .sdn-step-label { color: #F59E0B; }
-                #slide-20 .sdn-step.selected .sdn-icon { border-color: white; }
+                #slide-20 .shopping-step.highlight .shopping-step-label { color: #F59E0B; }
+                #slide-20 .shopping-step.selected .shopping-icon { border-color: white; }
 
-                #slide-20 .sdn-sim-btn {
-                    padding: 14px 36px; background: rgba(34, 211, 238, 0.1); border: 2px solid rgba(34, 211, 238, 0.5);
-                    color: #22D3EE; font-size: 1.05rem; font-weight: bold; border-radius: 8px; cursor: pointer;
+                #slide-20 .shopping-sim-btn {
+                    padding: 12px 32px; background: rgba(34, 211, 238, 0.12); border: 2px solid rgba(34, 211, 238, 0.5);
+                    color: #22D3EE; font-size: 1rem; font-weight: bold; border-radius: 8px; cursor: pointer;
                     transition: all 0.2s; text-transform: uppercase; letter-spacing: 1px; align-self: center;
                 }
-                #slide-20 .sdn-sim-btn:hover { background: rgba(34, 211, 238, 0.2); box-shadow: 0 0 20px rgba(34,211,238,0.4); transform: translateY(-2px); }
-                #slide-20 .sdn-sim-btn:disabled { opacity: 0.5; pointer-events: none; }
+                #slide-20 .shopping-sim-btn:hover { background: rgba(34, 211, 238, 0.2); box-shadow: 0 0 20px rgba(34,211,238,0.3); transform: translateY(-2px); }
+                #slide-20 .shopping-sim-btn:disabled { opacity: 0.5; pointer-events: none; }
 
-                #slide-20 .sdn-status {
-                    text-align: center; font-size: 1.15rem; color: white; min-height: 30px; font-weight: 500;
-                    background: rgba(0,0,0,0.3); padding: 10px 20px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);
+                #slide-20 .shopping-status {
+                    text-align: center; font-size: 1.1rem; color: white; min-height: 28px; font-weight: 500;
+                    background: rgba(0,0,0,0.25); padding: 10px 20px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);
                 }
 
-                #slide-20 .sdn-panel {
-                    background: rgba(15,30,55,0.8); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px;
-                    padding: 25px; display: none; opacity: 0; transform: translateY(10px); transition: all 0.4s ease;
+                #slide-20 .shopping-panel {
+                    background: rgba(15,30,55,0.85); border: 1px solid rgba(34,211,238,0.2); border-radius: 10px;
+                    padding: 20px; display: none; opacity: 0; transform: translateY(10px); transition: all 0.4s ease;
                 }
-                #slide-20 .sdn-panel.visible { display: block; opacity: 1; transform: translateY(0); }
+                #slide-20 .shopping-panel.visible { display: block; opacity: 1; transform: translateY(0); }
+
+                #slide-20 .shopping-explanation {
+                    text-align: center; color: var(--muted); font-size: 0.9rem; line-height: 1.6;
+                    background: rgba(15,30,55,0.5); padding: 14px 24px; border-radius: 8px;
+                    border-left: 3px solid var(--cyan); margin-top: 8px;
+                }
+
+                #slide-20 .shopping-note {
+                    text-align: center; color: rgba(168,180,199,0.6); font-size: 0.8rem; margin-top: 12px;
+                    font-style: italic;
+                }
+
+                @media (max-width: 1024px) {
+                    #slide-20 .shopping-step { width: 95px; }
+                    #slide-20 .shopping-icon { width: 55px; height: 55px; font-size: 1.4rem; }
+                    #slide-20 .shopping-step-label { font-size: 0.75rem; }
+                    #slide-20 .shopping-arrow { font-size: 1.2rem; margin: 0 6px; }
+                }
 
                 @media (max-width: 768px) {
-                    #slide-20 .sdn-flow { flex-direction: column; gap: 5px; }
-                    #slide-20 .sdn-arrow { transform: rotate(90deg); margin: 5px 0; }
-                    #slide-20 .sdn-step { width: 100%; flex-direction: row; gap: 15px; }
-                    #slide-20 .sdn-step-label { text-align: left; }
-                    #slide-20 .sdn-sim-btn { width: 100%; }
+                    #slide-20 .shopping-flow { flex-direction: column; gap: 4px; }
+                    #slide-20 .shopping-arrow { transform: rotate(90deg); margin: 4px 0; }
+                    #slide-20 .shopping-step { width: 100%; flex-direction: row; gap: 12px; }
+                    #slide-20 .shopping-step-label { text-align: left; }
+                    #slide-20 .shopping-sim-btn { width: 100%; }
+                    #slide-20 .shopping-explanation { font-size: 0.85rem; padding: 12px 18px; }
                 }
             </style>
 
-            <div class="sdn-layout">
-                <div class="sdn-flow" id="sdn-flow">
-                    <div class="sdn-step" id="sdn-step-0" onclick="showSdnDetail(0)">
-                        <div class="sdn-icon">👤</div>
-                        <div class="sdn-step-label">User</div>
+            <div class="shopping-layout">
+                <div class="shopping-flow" id="shopping-flow">
+                    <div class="shopping-step" id="shopping-step-0" onclick="showShoppingDetail(0)">
+                        <div class="shopping-icon">👤</div>
+                        <div class="shopping-step-label">Customer</div>
                     </div>
-                    <div class="sdn-arrow" id="sdn-arr-0">→</div>
-                    <div class="sdn-step" id="sdn-step-1" onclick="showSdnDetail(1)">
-                        <div class="sdn-icon">🌐</div>
-                        <div class="sdn-step-label">SDN PRIME<br>Website</div>
+                    <div class="shopping-arrow" id="shopping-arr-0">→</div>
+                    <div class="shopping-step" id="shopping-step-1" onclick="showShoppingDetail(1)">
+                        <div class="shopping-icon">🛒</div>
+                        <div class="shopping-step-label">Online Store</div>
                     </div>
-                    <div class="sdn-arrow" id="sdn-arr-1">→</div>
-                    <div class="sdn-step" id="sdn-step-2" onclick="showSdnDetail(2)">
-                        <div class="sdn-icon">⚡</div>
-                        <div class="sdn-step-label">Serverless<br>Function</div>
+                    <div class="shopping-arrow" id="shopping-arr-1">→</div>
+                    <div class="shopping-step" id="shopping-step-2" onclick="showShoppingDetail(2)">
+                        <div class="shopping-icon">⚡</div>
+                        <div class="shopping-step-label">Serverless<br>Function</div>
                     </div>
-                    <div class="sdn-arrow" id="sdn-arr-2">→</div>
-                    <div class="sdn-step" id="sdn-step-3" onclick="showSdnDetail(3)">
-                        <div class="sdn-icon">🗄️</div>
-                        <div class="sdn-step-label">Database</div>
+                    <div class="shopping-arrow" id="shopping-arr-2">→</div>
+                    <div class="shopping-step" id="shopping-step-3" onclick="showShoppingDetail(3)">
+                        <div class="shopping-icon">🗄️</div>
+                        <div class="shopping-step-label">Database</div>
                     </div>
-                    <div class="sdn-arrow" id="sdn-arr-3">→</div>
-                    <div class="sdn-step" id="sdn-step-4" onclick="showSdnDetail(4)">
-                        <div class="sdn-icon">✅</div>
-                        <div class="sdn-step-label">Website<br>Response</div>
+                    <div class="shopping-arrow" id="shopping-arr-3">→</div>
+                    <div class="shopping-step" id="shopping-step-4" onclick="showShoppingDetail(4)">
+                        <div class="shopping-icon">✅</div>
+                        <div class="shopping-step-label">Order<br>Confirmation</div>
                     </div>
                 </div>
 
                 <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-                    <button class="sdn-sim-btn" id="sdn-sim-btn" onclick="simulateSdnRequest()">Simulate Request</button>
+                    <button class="shopping-sim-btn" id="shopping-sim-btn" onclick="simulateShoppingOrder()">Simulate Order</button>
                 </div>
 
-                <div class="sdn-status" id="sdn-status">Tap a step to learn more, or simulate a full request.</div>
+                <div class="shopping-status" id="shopping-status">Tap a step to learn more, or simulate a full order process.</div>
 
-                <div class="sdn-panel" id="sdn-panel">
-                    <h3 id="sdn-panel-title" style="color: #22D3EE; margin: 0 0 12px 0; display: flex; align-items: center; gap: 12px; font-size: 1.25rem;"></h3>
-                    <p id="sdn-panel-desc" style="color: var(--muted); margin: 0; line-height: 1.6; font-size: 1.05rem;"></p>
+                <div class="shopping-panel" id="shopping-panel">
+                    <h3 id="shopping-panel-title" style="color: #22D3EE; margin: 0 0 10px 0; display: flex; align-items: center; gap: 10px; font-size: 1.15rem;"></h3>
+                    <p id="shopping-panel-desc" style="color: var(--muted); margin: 0; line-height: 1.5; font-size: 1rem;"></p>
+                </div>
+
+                <div class="shopping-explanation">
+                    <strong>Example process:</strong><br>
+                    A customer places an order on an online shopping website.<br>
+                    A serverless function receives and processes the order.<br>
+                    The function checks product information and saves the order in the database.<br>
+                    The system sends an order confirmation to the customer.
+                </div>
+
+                <div class="shopping-note">
+                    Illustrative example — demonstrates how serverless computing could support an online shopping system.
                 </div>
             </div>
 
             <script>
-                var sdnSteps = [
-                    { icon: '👤', title: 'User Request', desc: 'The user visits the SDN PRIME website and requests news, activities, or other content. This triggers the serverless workflow.' },
-                    { icon: '🌐', title: 'SDN PRIME Website', desc: 'The website frontend receives the request and sends it to a serverless API endpoint hosted in the cloud.' },
-                    { icon: '⚡', title: 'Serverless Function', desc: 'A cloud function activates on demand, processes the request logic, and queries the database for the required information.' },
-                    { icon: '🗄️', title: 'Database', desc: 'The database returns the requested records—such as news articles, event schedules, or student activities—back to the function.' },
-                    { icon: '✅', title: 'Website Response', desc: 'The serverless function formats the data and returns it to the website. The user sees the updated content instantly.' }
+                var shoppingSteps = [
+                    { icon: '👤', title: 'Customer', desc: 'The customer browses products on an online shopping website and decides to place an order.' },
+                    { icon: '🛒', title: 'Online Store', desc: 'The online store frontend receives the order details and sends them to a serverless API endpoint.' },
+                    { icon: '⚡', title: 'Serverless Function', desc: 'A serverless function activates to process the order, validate product availability, and calculate totals.' },
+                    { icon: '🗄️', title: 'Database', desc: 'The function saves the order information to the database and updates inventory records.' },
+                    { icon: '✅', title: 'Order Confirmation', desc: 'The system sends an order confirmation to the customer with details and estimated delivery time.' }
                 ];
 
-                function showSdnDetail(index) {
+                function showShoppingDetail(index) {
                     for (var i = 0; i < 5; i++) {
-                        document.getElementById('sdn-step-' + i).classList.remove('selected');
+                        document.getElementById('shopping-step-' + i).classList.remove('selected');
                     }
-                    document.getElementById('sdn-step-' + index).classList.add('selected');
+                    document.getElementById('shopping-step-' + index).classList.add('selected');
 
-                    var data = sdnSteps[index];
-                    document.getElementById('sdn-panel-title').innerHTML = '<span style="font-size:1.5rem;">' + data.icon + '</span> ' + data.title;
-                    document.getElementById('sdn-panel-desc').textContent = data.desc;
+                    var data = shoppingSteps[index];
+                    document.getElementById('shopping-panel-title').innerHTML = '<span style="font-size:1.4rem;">' + data.icon + '</span> ' + data.title;
+                    document.getElementById('shopping-panel-desc').textContent = data.desc;
 
-                    var panel = document.getElementById('sdn-panel');
+                    var panel = document.getElementById('shopping-panel');
                     panel.style.display = 'block';
                     void panel.offsetWidth;
                     panel.classList.add('visible');
                 }
 
-                function simulateSdnRequest() {
-                    var btn = document.getElementById('sdn-sim-btn');
+                function simulateShoppingOrder() {
+                    var btn = document.getElementById('shopping-sim-btn');
                     if (btn.disabled) return;
                     btn.disabled = true;
 
-                    var panel = document.getElementById('sdn-panel');
+                    var panel = document.getElementById('shopping-panel');
                     panel.classList.remove('visible');
                     setTimeout(() => { panel.style.display = 'none'; }, 300);
 
                     // Reset all
                     for (var i = 0; i < 5; i++) {
-                        document.getElementById('sdn-step-' + i).className = 'sdn-step';
+                        document.getElementById('shopping-step-' + i).className = 'shopping-step';
                     }
                     for (var j = 0; j < 4; j++) {
-                        document.getElementById('sdn-arr-' + j).classList.remove('lit');
+                        document.getElementById('shopping-arr-' + j).classList.remove('lit');
                     }
 
-                    var status = document.getElementById('sdn-status');
+                    var status = document.getElementById('shopping-status');
                     var steps = [
-                        { step: 0, cls: 'active', text: 'User requests news from SDN PRIME...', arrow: -1 },
-                        { step: 1, cls: 'active', text: 'Website receives the request...', arrow: 0 },
+                        { step: 0, cls: 'active', text: 'Customer places an order...', arrow: -1 },
+                        { step: 1, cls: 'active', text: 'Online store receives the order...', arrow: 0 },
                         { step: 2, cls: 'highlight', text: 'Serverless function processing...', arrow: 1 },
-                        { step: 3, cls: 'active', text: 'Querying the database...', arrow: 2 },
-                        { step: 4, cls: 'active', text: 'Response delivered to the user!', arrow: 3 }
+                        { step: 3, cls: 'active', text: 'Saving order to database...', arrow: 2 },
+                        { step: 4, cls: 'active', text: 'Order confirmation sent!', arrow: 3 }
                     ];
 
                     var delay = 0;
@@ -3315,11 +3496,11 @@
                         setTimeout(() => {
                             // Deactivate previous
                             for (var k = 0; k < 5; k++) {
-                                document.getElementById('sdn-step-' + k).className = 'sdn-step';
+                                document.getElementById('shopping-step-' + k).className = 'shopping-step';
                             }
-                            document.getElementById('sdn-step-' + s.step).classList.add(s.cls);
+                            document.getElementById('shopping-step-' + s.step).classList.add(s.cls);
                             if (s.arrow >= 0) {
-                                document.getElementById('sdn-arr-' + s.arrow).classList.add('lit');
+                                document.getElementById('shopping-arr-' + s.arrow).classList.add('lit');
                             }
                             status.textContent = s.text;
 
@@ -3334,81 +3515,1623 @@
         </div>
 
         <!-- ============================================ -->
-        <!-- SLIDE 21: SUMMARY AND QUICK REVIEW -->
+        <!-- SLIDE 21: SERVERLESS DEPLOYMENT PROCESS -->
         <!-- ============================================ -->
-        <div class="slide" id="slide-21" style="justify-content: flex-start; padding-top: 40px;">
-            <h2 style="text-align: center; border-bottom: none; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px;">Summary & Quick Review</h2>
+        <div class="slide" id="slide-21" style="justify-content: flex-start; padding-top: 50px;">
+            <h2 style="text-align: center; border-bottom: none; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 2px; color: var(--cyan); font-size: 2rem; font-weight: 600;">Serverless Deployment Process</h2>
+            <p style="text-align: center; color: var(--muted); max-width: 900px; margin: 0 auto 20px auto; font-size: 1rem; line-height: 1.5;">
+                Serverless deployment is the process of preparing, testing, connecting, and publishing serverless functions and cloud services.
+            </p>
+
+            <style>
+                #slide-21 .simulator-container {
+                    display: flex;
+                    gap: 30px;
+                    width: 100%;
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    flex: 1;
+                }
+
+                #slide-21 .code-panel {
+                    flex: 1;
+                    background: rgba(15, 30, 55, 0.95);
+                    border: 1px solid rgba(255,255,255,0.15);
+                    border-radius: 12px;
+                    padding: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                }
+
+                #slide-21 .code-header {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    padding-bottom: 12px;
+                    border-bottom: 1px solid rgba(255,255,255,0.1);
+                }
+
+                #slide-21 .code-title {
+                    color: var(--cyan);
+                    font-weight: 600;
+                    font-size: 0.95rem;
+                    font-family: 'Courier New', monospace;
+                }
+
+                #slide-21 .code-dots {
+                    display: flex;
+                    gap: 6px;
+                }
+
+                #slide-21 .code-dot {
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background: rgba(255,255,255,0.3);
+                }
+
+                #slide-21 .code-editor {
+                    background: #0d1117;
+                    border: 1px solid rgba(255,255,255,0.1);
+                    border-radius: 8px;
+                    padding: 15px;
+                    font-family: 'Courier New', monospace;
+                    font-size: 0.9rem;
+                    color: #c9d1d9;
+                    line-height: 1.6;
+                    overflow-x: auto;
+                    white-space: pre;
+                }
+
+                #slide-21 .code-keyword { color: #ff7b72; }
+                #slide-21 .code-func { color: #d2a8ff; }
+                #slide-21 .code-string { color: #a5d6ff; }
+                #slide-21 .code-param { color: #79c0ff; }
+
+                #slide-21 .input-group {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                }
+
+                #slide-21 .input-label {
+                    color: var(--muted);
+                    font-size: 0.9rem;
+                    white-space: nowrap;
+                }
+
+                #slide-21 .name-input {
+                    flex: 1;
+                    background: rgba(255,255,255,0.05);
+                    border: 1px solid rgba(255,255,255,0.2);
+                    border-radius: 6px;
+                    padding: 10px 12px;
+                    color: white;
+                    font-size: 0.9rem;
+                    font-family: inherit;
+                }
+
+                #slide-21 .name-input:focus {
+                    outline: none;
+                    border-color: var(--cyan);
+                }
+
+                #slide-21 .button-group {
+                    display: flex;
+                    gap: 10px;
+                }
+
+                #slide-21 .sim-btn {
+                    flex: 1;
+                    padding: 12px 16px;
+                    border: none;
+                    border-radius: 6px;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: all 0.2s;
+                    min-height: 44px;
+                }
+
+                #slide-21 .btn-run {
+                    background: var(--blue);
+                    color: white;
+                }
+
+                #slide-21 .btn-run:hover:not(:disabled) {
+                    background: #1d4ed8;
+                }
+
+                #slide-21 .btn-deploy {
+                    background: var(--cyan);
+                    color: var(--navy);
+                }
+
+                #slide-21 .btn-deploy:hover:not(:disabled) {
+                    background: #06b6d4;
+                }
+
+                #slide-21 .btn-reset {
+                    background: rgba(255,255,255,0.1);
+                    color: white;
+                }
+
+                #slide-21 .btn-reset:hover:not(:disabled) {
+                    background: rgba(255,255,255,0.2);
+                }
+
+                #slide-21 .sim-btn:disabled {
+                    opacity: 0.5;
+                    cursor: not-allowed;
+                }
+
+                #slide-21 .output-panel {
+                    background: rgba(0,0,0,0.3);
+                    border: 1px solid rgba(255,255,255,0.1);
+                    border-radius: 8px;
+                    padding: 12px;
+                    min-height: 80px;
+                    font-family: 'Courier New', monospace;
+                    font-size: 0.85rem;
+                    color: var(--muted);
+                }
+
+                #slide-21 .output-content {
+                    white-space: pre-wrap;
+                    word-break: break-word;
+                }
+
+                #slide-21 .output-success {
+                    color: #3ECF8E;
+                    font-weight: 600;
+                }
+
+                #slide-21 .process-panel {
+                    flex: 1;
+                    background: rgba(15, 30, 55, 0.95);
+                    border: 1px solid rgba(255,255,255,0.15);
+                    border-radius: 12px;
+                    padding: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                }
+
+                #slide-21 .process-header {
+                    color: var(--cyan);
+                    font-weight: 600;
+                    font-size: 0.95rem;
+                    padding-bottom: 12px;
+                    border-bottom: 1px solid rgba(255,255,255,0.1);
+                }
+
+                #slide-21 .process-steps {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+                    flex: 1;
+                }
+
+                #slide-21 .process-step {
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                    padding: 12px;
+                    background: rgba(255,255,255,0.03);
+                    border: 1px solid rgba(255,255,255,0.1);
+                    border-radius: 8px;
+                    transition: all 0.3s ease;
+                }
+
+                #slide-21 .process-step.waiting {
+                    border-color: rgba(255,255,255,0.1);
+                }
+
+                #slide-21 .process-step.running {
+                    border-color: var(--cyan);
+                    background: rgba(34,211,238,0.05);
+                }
+
+                #slide-21 .process-step.completed {
+                    border-color: #3ECF8E;
+                    background: rgba(62,207,142,0.05);
+                }
+
+                #slide-21 .step-number {
+                    width: 28px;
+                    height: 28px;
+                    border-radius: 50%;
+                    background: rgba(255,255,255,0.1);
+                    color: var(--muted);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: bold;
+                    font-size: 0.85rem;
+                    flex-shrink: 0;
+                    transition: all 0.3s ease;
+                }
+
+                #slide-21 .process-step.running .step-number {
+                    background: var(--cyan);
+                    color: var(--navy);
+                }
+
+                #slide-21 .process-step.completed .step-number {
+                    background: #3ECF8E;
+                    color: var(--navy);
+                }
+
+                #slide-21 .step-content {
+                    flex: 1;
+                }
+
+                #slide-21 .step-title {
+                    color: white;
+                    font-weight: 600;
+                    font-size: 0.9rem;
+                    margin-bottom: 4px;
+                }
+
+                #slide-21 .step-status {
+                    color: var(--muted);
+                    font-size: 0.8rem;
+                }
+
+                #slide-21 .process-step.running .step-status {
+                    color: var(--cyan);
+                }
+
+                #slide-21 .process-step.completed .step-status {
+                    color: #3ECF8E;
+                }
+
+                #slide-21 .step-indicator {
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background: rgba(255,255,255,0.2);
+                    flex-shrink: 0;
+                    transition: all 0.3s ease;
+                }
+
+                #slide-21 .process-step.running .step-indicator {
+                    background: var(--cyan);
+                    animation: pulse 1s ease-in-out infinite;
+                }
+
+                #slide-21 .process-step.completed .step-indicator {
+                    background: #3ECF8E;
+                }
+
+                @keyframes pulse {
+                    0%, 100% { opacity: 1; }
+                    50% { opacity: 0.5; }
+                }
+
+                #slide-21 .monitoring-panel {
+                    background: rgba(0,0,0,0.3);
+                    border: 1px solid rgba(255,255,255,0.1);
+                    border-radius: 8px;
+                    padding: 12px;
+                    display: none;
+                }
+
+                #slide-21 .monitoring-panel.visible {
+                    display: block;
+                }
+
+                #slide-21 .monitoring-grid {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 10px;
+                }
+
+                #slide-21 .monitor-item {
+                    text-align: center;
+                    padding: 8px;
+                    background: rgba(255,255,255,0.05);
+                    border-radius: 6px;
+                }
+
+                #slide-21 .monitor-label {
+                    color: var(--muted);
+                    font-size: 0.75rem;
+                    margin-bottom: 4px;
+                }
+
+                #slide-21 .monitor-value {
+                    color: white;
+                    font-weight: bold;
+                    font-size: 1rem;
+                }
+
+                #slide-21 .live-status {
+                    text-align: center;
+                    padding: 12px;
+                    background: rgba(62,207,142,0.1);
+                    border: 1px solid #3ECF8E;
+                    border-radius: 8px;
+                    color: #3ECF8E;
+                    font-weight: bold;
+                    font-size: 0.95rem;
+                    display: none;
+                }
+
+                #slide-21 .live-status.visible {
+                    display: block;
+                }
+
+                #slide-21 .disclaimer {
+                    text-align: center;
+                    color: var(--muted);
+                    font-size: 0.75rem;
+                    margin-top: 15px;
+                    padding-top: 15px;
+                    border-top: 1px solid rgba(255,255,255,0.1);
+                }
+
+                @media (prefers-reduced-motion: reduce) {
+                    #slide-21 .process-step.running .step-indicator {
+                        animation: none;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    #slide-21 .simulator-container {
+                        flex-direction: column;
+                        gap: 20px;
+                    }
+                    #slide-21 .code-panel,
+                    #slide-21 .process-panel {
+                        padding: 15px;
+                    }
+                    #slide-21 .button-group {
+                        flex-direction: column;
+                    }
+                    #slide-21 .sim-btn {
+                        width: 100%;
+                    }
+                }
+            </style>
+
+            <div class="simulator-container">
+                <div class="code-panel">
+                    <div class="code-header">
+                        <div class="code-dots">
+                            <div class="code-dot"></div>
+                            <div class="code-dot"></div>
+                            <div class="code-dot"></div>
+                        </div>
+                        <div class="code-title">function.js</div>
+                    </div>
+                    <div class="code-editor" id="code-editor">
+<span class="code-keyword">function</span> <span class="code-func">handler</span>(<span class="code-param">event</span>) {
+  <span class="code-keyword">const</span> name = event.name || <span class="code-string">"Student"</span>;
+
+  <span class="code-keyword">return</span> {
+    message: <span class="code-string">`Hello, ${name}!`</span>,
+    status: <span class="code-string">"success"</span>
+  };
+}</div>
+                    <div class="input-group">
+                        <label class="input-label">Name:</label>
+                        <input type="text" class="name-input" id="name-input" value="Student" placeholder="Enter name">
+                    </div>
+                    <div class="button-group">
+                        <button class="sim-btn btn-run" id="btn-run" onclick="runFunction()">Run Function</button>
+                        <button class="sim-btn btn-deploy" id="btn-deploy" onclick="deployFunction()" disabled>Deploy to Cloud</button>
+                        <button class="sim-btn btn-reset" id="btn-reset" onclick="resetSimulator()">Reset</button>
+                    </div>
+                    <div class="output-panel">
+                        <div class="output-content" id="output-content">Ready to run serverless function.</div>
+                    </div>
+                </div>
+
+                <div class="process-panel">
+                    <div class="process-header">Deployment Process</div>
+                    <div class="process-steps">
+                        <div class="process-step waiting" id="step-1">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <div class="step-title">Write Code</div>
+                                <div class="step-status" id="status-1">Waiting for code</div>
+                            </div>
+                            <div class="step-indicator"></div>
+                        </div>
+                        <div class="process-step waiting" id="step-2">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <div class="step-title">Test Function</div>
+                                <div class="step-status" id="status-2">Waiting for test</div>
+                            </div>
+                            <div class="step-indicator"></div>
+                        </div>
+                        <div class="process-step waiting" id="step-3">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <div class="step-title">Configure Services</div>
+                                <div class="step-status" id="status-3">Waiting for configuration</div>
+                            </div>
+                            <div class="step-indicator"></div>
+                        </div>
+                        <div class="process-step waiting" id="step-4">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <div class="step-title">Deploy to Cloud</div>
+                                <div class="step-status" id="status-4">Waiting for deployment</div>
+                            </div>
+                            <div class="step-indicator"></div>
+                        </div>
+                        <div class="process-step waiting" id="step-5">
+                            <div class="step-number">5</div>
+                            <div class="step-content">
+                                <div class="step-title">Monitor Application</div>
+                                <div class="step-status" id="status-5">Waiting for monitoring</div>
+                            </div>
+                            <div class="step-indicator"></div>
+                        </div>
+                    </div>
+                    <div class="monitoring-panel" id="monitoring-panel">
+                        <div class="monitoring-grid">
+                            <div class="monitor-item">
+                                <div class="monitor-label">Requests</div>
+                                <div class="monitor-value">1</div>
+                            </div>
+                            <div class="monitor-item">
+                                <div class="monitor-label">Errors</div>
+                                <div class="monitor-value">0</div>
+                            </div>
+                            <div class="monitor-item">
+                                <div class="monitor-label">Status</div>
+                                <div class="monitor-value">Online</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="live-status" id="live-status">SERVERLESS FUNCTION IS LIVE</div>
+                    <div class="disclaimer">Educational simulation — no real cloud deployment is performed.</div>
+                </div>
+            </div>
+
+            <script>
+                let isTested = false;
+                let isDeployed = false;
+
+                function updateOutput(text, isSuccess = false) {
+                    const output = document.getElementById('output-content');
+                    output.innerHTML = text;
+                    if (isSuccess) {
+                        output.classList.add('output-success');
+                    } else {
+                        output.classList.remove('output-success');
+                    }
+                }
+
+                function setStepStatus(stepNum, status, state) {
+                    const step = document.getElementById(`step-${stepNum}`);
+                    const statusText = document.getElementById(`status-${stepNum}`);
+                    
+                    step.classList.remove('waiting', 'running', 'completed');
+                    step.classList.add(state);
+                    statusText.textContent = status;
+                }
+
+                function runFunction() {
+                    if (isTested) return;
+                    
+                    const nameInput = document.getElementById('name-input');
+                    const name = nameInput.value.trim() || 'Student';
+                    
+                    // Step 1: Write Code
+                    setStepStatus(1, 'Code loaded', 'completed');
+                    
+                    setTimeout(() => {
+                        // Step 2: Test Function
+                        setStepStatus(2, 'Testing function...', 'running');
+                        
+                        setTimeout(() => {
+                            const result = {
+                                message: `Hello, ${name}!`,
+                                status: "success"
+                            };
+                            
+                            updateOutput(JSON.stringify(result, null, 2) + '\n\nFunction executed successfully.', true);
+                            setStepStatus(2, 'Test passed', 'completed');
+                            
+                            isTested = true;
+                            document.getElementById('btn-deploy').disabled = false;
+                        }, 1000);
+                    }, 500);
+                }
+
+                function deployFunction() {
+                    if (!isTested || isDeployed) return;
+                    
+                    document.getElementById('btn-run').disabled = true;
+                    document.getElementById('btn-deploy').disabled = true;
+                    
+                    // Step 3: Configure Services
+                    setStepStatus(3, 'Connecting APIs and cloud services...', 'running');
+                    
+                    setTimeout(() => {
+                        setStepStatus(3, 'Services configured', 'completed');
+                        
+                        // Step 4: Deploy to Cloud
+                        setStepStatus(4, 'Uploading function...', 'running');
+                        
+                        setTimeout(() => {
+                            setStepStatus(4, 'Deploying...', 'running');
+                            
+                            setTimeout(() => {
+                                setStepStatus(4, 'Deployment successful', 'completed');
+                                
+                                // Step 5: Monitor Application
+                                setStepStatus(5, 'Monitoring active', 'running');
+                                
+                                setTimeout(() => {
+                                    setStepStatus(5, 'Monitoring active', 'completed');
+                                    
+                                    document.getElementById('monitoring-panel').classList.add('visible');
+                                    document.getElementById('live-status').classList.add('visible');
+                                    
+                                    isDeployed = true;
+                                }, 800);
+                            }, 1200);
+                        }, 1000);
+                    }, 1000);
+                }
+
+                function resetSimulator() {
+                    isTested = false;
+                    isDeployed = false;
+                    
+                    // Reset all steps
+                    for (let i = 1; i <= 5; i++) {
+                        setStepStatus(i, i === 1 ? 'Waiting for code' : i === 2 ? 'Waiting for test' : i === 3 ? 'Waiting for configuration' : i === 4 ? 'Waiting for deployment' : 'Waiting for monitoring', 'waiting');
+                    }
+                    
+                    // Reset UI
+                    updateOutput('Ready to run serverless function.');
+                    document.getElementById('btn-run').disabled = false;
+                    document.getElementById('btn-deploy').disabled = true;
+                    document.getElementById('monitoring-panel').classList.remove('visible');
+                    document.getElementById('live-status').classList.remove('visible');
+                }
+            </script>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 22: MONITORING AND OBSERVABILITY -->
+        <!-- ============================================ -->
+        <div class="slide" id="slide-22" style="justify-content: flex-start; padding-top: 45px;">
+            <h2 style="text-align: center; border-bottom: none; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; color: var(--cyan); font-size: 1.9rem; font-weight: 600;">Monitoring and Observability</h2>
+            <p style="text-align: center; color: var(--muted); max-width: 900px; margin: 0 auto 20px auto; font-size: 0.95rem; line-height: 1.5;">
+                Monitoring and observability help developers understand whether serverless functions are running correctly and identify errors or performance problems.
+            </p>
+
+            <style>
+                #slide-22 .dashboard-container {
+                    display: flex;
+                    gap: 20px;
+                    width: 100%;
+                    max-width: 1300px;
+                    margin: 0 auto;
+                    flex: 1;
+                }
+
+                #slide-22 .dashboard-panel {
+                    background: rgba(15, 30, 55, 0.95);
+                    border: 1px solid rgba(255,255,255,0.15);
+                    border-radius: 12px;
+                    padding: 18px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                }
+
+                #slide-22 .panel-header {
+                    color: var(--cyan);
+                    font-weight: 600;
+                    font-size: 0.9rem;
+                    padding-bottom: 12px;
+                    border-bottom: 1px solid rgba(255,255,255,0.1);
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                }
+
+                #slide-22 .request-panel {
+                    flex: 0 0 280px;
+                }
+
+                #slide-22 .request-sample {
+                    background: #0d1117;
+                    border: 1px solid rgba(255,255,255,0.1);
+                    border-radius: 8px;
+                    padding: 12px;
+                    font-family: 'Courier New', monospace;
+                    font-size: 0.8rem;
+                    color: #c9d1d9;
+                    line-height: 1.5;
+                }
+
+                #slide-22 .request-icon {
+                    font-size: 1.5rem;
+                    margin-bottom: 8px;
+                }
+
+                #slide-22 .dashboard-btn {
+                    padding: 12px 16px;
+                    border: none;
+                    border-radius: 6px;
+                    font-size: 0.85rem;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: all 0.2s;
+                    min-height: 44px;
+                    width: 100%;
+                }
+
+                #slide-22 .btn-send {
+                    background: var(--blue);
+                    color: white;
+                }
+
+                #slide-22 .btn-send:hover:not(:disabled) {
+                    background: #1d4ed8;
+                }
+
+                #slide-22 .btn-reset {
+                    background: rgba(255,255,255,0.1);
+                    color: white;
+                }
+
+                #slide-22 .btn-reset:hover:not(:disabled) {
+                    background: rgba(255,255,255,0.2);
+                }
+
+                #slide-22 .btn-warning {
+                    background: rgba(245, 158, 11, 0.2);
+                    color: #F59E0B;
+                    border: 1px solid rgba(245, 158, 11, 0.4);
+                }
+
+                #slide-22 .btn-warning:hover:not(:disabled) {
+                    background: rgba(245, 158, 11, 0.3);
+                }
+
+                #slide-22 .dashboard-btn:disabled {
+                    opacity: 0.5;
+                    cursor: not-allowed;
+                }
+
+                #slide-22 .status-display {
+                    background: rgba(0,0,0,0.3);
+                    border: 1px solid rgba(255,255,255,0.1);
+                    border-radius: 8px;
+                    padding: 12px;
+                    text-align: center;
+                    font-size: 0.85rem;
+                    color: var(--muted);
+                    min-height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                #slide-22 .status-success {
+                    color: #3ECF8E;
+                    font-weight: 600;
+                }
+
+                #slide-22 .status-warning {
+                    color: #F59E0B;
+                    font-weight: 600;
+                }
+
+                #slide-22 .function-panel {
+                    flex: 0 0 240px;
+                    align-items: center;
+                }
+
+                #slide-22 .function-flow {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 12px;
+                    flex: 1;
+                }
+
+                #slide-22 .flow-arrow {
+                    color: rgba(255,255,255,0.3);
+                    font-size: 1.2rem;
+                }
+
+                #slide-22 .function-node {
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 50%;
+                    background: rgba(15, 30, 55, 0.95);
+                    border: 2px solid rgba(255,255,255,0.2);
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    transition: all 0.3s ease;
+                }
+
+                #slide-22 .function-node.running {
+                    border-color: var(--cyan);
+                    box-shadow: 0 0 20px rgba(34,211,238,0.4);
+                }
+
+                #slide-22 .function-node.success {
+                    border-color: #3ECF8E;
+                    box-shadow: 0 0 20px rgba(62,207,142,0.4);
+                }
+
+                #slide-22 .function-icon {
+                    font-size: 2rem;
+                }
+
+                #slide-22 .function-label {
+                    color: white;
+                    font-weight: 600;
+                    font-size: 0.75rem;
+                    text-align: center;
+                    margin-top: 4px;
+                }
+
+                #slide-22 .function-status {
+                    color: var(--muted);
+                    font-size: 0.7rem;
+                    text-align: center;
+                }
+
+                #slide-22 .data-packet {
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    background: var(--cyan);
+                    box-shadow: 0 0 10px var(--cyan);
+                    position: absolute;
+                    opacity: 0;
+                }
+
+                #slide-22 .data-packet.animate {
+                    animation: movePacket 2s ease-in-out forwards;
+                }
+
+                @keyframes movePacket {
+                    0% { opacity: 1; transform: translateX(0); }
+                    100% { opacity: 0; transform: translateX(100px); }
+                }
+
+                #slide-22 .monitoring-panel {
+                    flex: 1;
+                }
+
+                #slide-22 .monitoring-grid {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 12px;
+                    flex: 1;
+                }
+
+                #slide-22 .monitor-module {
+                    background: rgba(255,255,255,0.03);
+                    border: 1px solid rgba(255,255,255,0.1);
+                    border-radius: 8px;
+                    padding: 12px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                }
+
+                #slide-22 .module-title {
+                    color: var(--cyan);
+                    font-weight: 600;
+                    font-size: 0.8rem;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                }
+
+                #slide-22 .log-container {
+                    background: #0d1117;
+                    border: 1px solid rgba(255,255,255,0.1);
+                    border-radius: 6px;
+                    padding: 8px;
+                    font-family: 'Courier New', monospace;
+                    font-size: 0.7rem;
+                    color: var(--muted);
+                    min-height: 80px;
+                    max-height: 80px;
+                    overflow-y: auto;
+                }
+
+                #slide-22 .log-entry {
+                    margin-bottom: 4px;
+                    opacity: 0;
+                    animation: fadeIn 0.3s ease forwards;
+                }
+
+                @keyframes fadeIn {
+                    to { opacity: 1; }
+                }
+
+                #slide-22 .log-info { color: #3ECF8E; }
+                #slide-22 .log-warn { color: #F59E0B; }
+
+                #slide-22 .metrics-grid {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 8px;
+                }
+
+                #slide-22 .metric-item {
+                    background: rgba(255,255,255,0.05);
+                    border-radius: 6px;
+                    padding: 8px;
+                    text-align: center;
+                }
+
+                #slide-22 .metric-label {
+                    color: var(--muted);
+                    font-size: 0.7rem;
+                    margin-bottom: 4px;
+                }
+
+                #slide-22 .metric-value {
+                    color: white;
+                    font-weight: bold;
+                    font-size: 1rem;
+                }
+
+                #slide-22 .trace-path {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 4px;
+                    font-size: 0.7rem;
+                    color: var(--muted);
+                }
+
+                #slide-22 .trace-node {
+                    padding: 4px 8px;
+                    background: rgba(255,255,255,0.05);
+                    border-radius: 4px;
+                    border: 1px solid rgba(255,255,255,0.1);
+                    transition: all 0.3s ease;
+                }
+
+                #slide-22 .trace-node.active {
+                    border-color: var(--cyan);
+                    background: rgba(34,211,238,0.1);
+                    color: var(--cyan);
+                }
+
+                #slide-22 .trace-arrow {
+                    color: rgba(255,255,255,0.2);
+                }
+
+                #slide-22 .alert-status {
+                    padding: 8px;
+                    border-radius: 6px;
+                    text-align: center;
+                    font-size: 0.85rem;
+                    font-weight: 600;
+                    background: rgba(62,207,142,0.1);
+                    border: 1px solid #3ECF8E;
+                    color: #3ECF8E;
+                }
+
+                #slide-22 .alert-status.warning {
+                    background: rgba(245, 158, 11, 0.1);
+                    border-color: #F59E0B;
+                    color: #F59E0B;
+                }
+
+                #slide-22 .perf-status {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 6px;
+                }
+
+                #slide-22 .perf-item {
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 0.8rem;
+                }
+
+                #slide-22 .perf-label {
+                    color: var(--muted);
+                }
+
+                #slide-22 .perf-value {
+                    color: white;
+                    font-weight: 600;
+                }
+
+                #slide-22 .system-status {
+                    text-align: center;
+                    padding: 10px;
+                    background: rgba(62,207,142,0.1);
+                    border: 1px solid #3ECF8E;
+                    border-radius: 8px;
+                    color: #3ECF8E;
+                    font-weight: bold;
+                    font-size: 0.9rem;
+                    display: none;
+                }
+
+                #slide-22 .system-status.visible {
+                    display: block;
+                }
+
+                #slide-22 .system-status.warning {
+                    background: rgba(245, 158, 11, 0.1);
+                    border-color: #F59E0B;
+                    color: #F59E0B;
+                }
+
+                #slide-22 .educational-note {
+                    text-align: center;
+                    color: var(--muted);
+                    font-size: 0.8rem;
+                    margin-top: 15px;
+                    padding-top: 15px;
+                    border-top: 1px solid rgba(255,255,255,0.1);
+                }
+
+                #slide-22 .disclaimer {
+                    text-align: center;
+                    color: var(--muted);
+                    font-size: 0.7rem;
+                    margin-top: 8px;
+                }
+
+                @media (prefers-reduced-motion: reduce) {
+                    #slide-22 .data-packet.animate {
+                        animation: none;
+                    }
+                    #slide-22 .log-entry {
+                        animation: none;
+                        opacity: 1;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    #slide-22 .dashboard-container {
+                        flex-direction: column;
+                        gap: 15px;
+                    }
+                    #slide-22 .request-panel,
+                    #slide-22 .function-panel {
+                        flex: none;
+                        width: 100%;
+                    }
+                    #slide-22 .monitoring-grid {
+                        grid-template-columns: 1fr;
+                    }
+                }
+            </style>
+
+            <div class="dashboard-container">
+                <div class="dashboard-panel request-panel">
+                    <div class="panel-header">Application Request</div>
+                    <div class="request-icon">🌐</div>
+                    <div class="request-sample">{
+  "user": "Student",
+  "action": "viewDashboard"
+}</div>
+                    <button class="dashboard-btn btn-send" id="btn-send" onclick="sendRequest()">Send Request</button>
+                    <button class="dashboard-btn btn-warning" id="btn-warning" onclick="simulateWarning()">Simulate Warning</button>
+                    <button class="dashboard-btn btn-reset" id="btn-reset" onclick="resetMonitoring()">Reset Monitoring</button>
+                    <div class="status-display" id="request-status">Ready to monitor serverless activity.</div>
+                </div>
+
+                <div class="dashboard-panel function-panel">
+                    <div class="panel-header">Serverless Function</div>
+                    <div class="function-flow">
+                        <div class="function-node" id="function-node">
+                            <div class="function-icon">⚡</div>
+                            <div class="function-label">Function</div>
+                        </div>
+                        <div class="flow-arrow">↓</div>
+                        <div class="function-status" id="function-status">Waiting for request</div>
+                    </div>
+                </div>
+
+                <div class="dashboard-panel monitoring-panel">
+                    <div class="panel-header">Monitoring Tools</div>
+                    <div class="monitoring-grid">
+                        <div class="monitor-module">
+                            <div class="module-title">Logs</div>
+                            <div class="log-container" id="log-container">
+                                <div class="log-entry">Waiting for logs...</div>
+                            </div>
+                        </div>
+                        <div class="monitor-module">
+                            <div class="module-title">Metrics</div>
+                            <div class="metrics-grid">
+                                <div class="metric-item">
+                                    <div class="metric-label">Requests</div>
+                                    <div class="metric-value" id="metric-requests">0</div>
+                                </div>
+                                <div class="metric-item">
+                                    <div class="metric-label">Successful</div>
+                                    <div class="metric-value" id="metric-success">0</div>
+                                </div>
+                                <div class="metric-item">
+                                    <div class="metric-label">Errors</div>
+                                    <div class="metric-value" id="metric-errors">0</div>
+                                </div>
+                                <div class="metric-item">
+                                    <div class="metric-label">Duration</div>
+                                    <div class="metric-value" id="metric-duration">-- ms</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="monitor-module">
+                            <div class="module-title">Tracing</div>
+                            <div class="trace-path" id="trace-path">
+                                <span class="trace-node" id="trace-1">Client</span>
+                                <span class="trace-arrow">→</span>
+                                <span class="trace-node" id="trace-2">API Gateway</span>
+                                <span class="trace-arrow">→</span>
+                                <span class="trace-node" id="trace-3">Function</span>
+                                <span class="trace-arrow">→</span>
+                                <span class="trace-node" id="trace-4">Database</span>
+                                <span class="trace-arrow">→</span>
+                                <span class="trace-node" id="trace-5">Response</span>
+                            </div>
+                        </div>
+                        <div class="monitor-module">
+                            <div class="module-title">Alerts</div>
+                            <div class="alert-status" id="alert-status">System Status: Normal</div>
+                        </div>
+                        <div class="monitor-module" style="grid-column: span 2;">
+                            <div class="module-title">Performance Monitoring</div>
+                            <div class="perf-status">
+                                <div class="perf-item">
+                                    <span class="perf-label">Response Time:</span>
+                                    <span class="perf-value" id="perf-response">--</span>
+                                </div>
+                                <div class="perf-item">
+                                    <span class="perf-label">Function Status:</span>
+                                    <span class="perf-value" id="perf-status">Idle</span>
+                                </div>
+                                <div class="perf-item">
+                                    <span class="perf-label">Service Availability:</span>
+                                    <span class="perf-value" id="perf-availability">--</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="system-status" id="system-status">SYSTEM HEALTHY</div>
+                </div>
+            </div>
+
+            <div class="educational-note">Monitoring helps developers detect errors, understand application behavior, and improve serverless performance.</div>
+            <div class="disclaimer">Educational simulation — no real cloud monitoring service is connected.</div>
+
+            <script>
+                let requestCount = 0;
+                let successCount = 0;
+                let errorCount = 0;
+                let isProcessing = false;
+
+                function addLog(message, type = 'info') {
+                    const container = document.getElementById('log-container');
+                    const entry = document.createElement('div');
+                    entry.className = `log-entry log-${type}`;
+                    entry.textContent = message;
+                    container.appendChild(entry);
+                    container.scrollTop = container.scrollHeight;
+                }
+
+                function clearLogs() {
+                    document.getElementById('log-container').innerHTML = '<div class="log-entry">Waiting for logs...</div>';
+                }
+
+                function updateMetrics() {
+                    document.getElementById('metric-requests').textContent = requestCount;
+                    document.getElementById('metric-success').textContent = successCount;
+                    document.getElementById('metric-errors').textContent = errorCount;
+                }
+
+                function activateTraceNode(nodeId) {
+                    document.getElementById(nodeId).classList.add('active');
+                }
+
+                function resetTrace() {
+                    for (let i = 1; i <= 5; i++) {
+                        document.getElementById(`trace-${i}`).classList.remove('active');
+                    }
+                }
+
+                function updateStatus(message, type = '') {
+                    const status = document.getElementById('request-status');
+                    status.textContent = message;
+                    status.className = 'status-display';
+                    if (type) status.classList.add(`status-${type}`);
+                }
+
+                function sendRequest() {
+                    if (isProcessing) return;
+                    isProcessing = true;
+
+                    document.getElementById('btn-send').disabled = true;
+                    document.getElementById('btn-warning').disabled = true;
+
+                    clearLogs();
+                    updateStatus('Request received');
+                    addLog('[INFO] Function invoked');
+
+                    // Activate function
+                    const functionNode = document.getElementById('function-node');
+                    functionNode.classList.add('running');
+                    document.getElementById('function-status').textContent = 'Function running...';
+
+                    setTimeout(() => {
+                        addLog('[INFO] Request received');
+                        activateTraceNode('trace-1');
+                        
+                        setTimeout(() => {
+                            activateTraceNode('trace-2');
+                            addLog('[INFO] Processing request');
+                            
+                            setTimeout(() => {
+                                activateTraceNode('trace-3');
+                                
+                                setTimeout(() => {
+                                    activateTraceNode('trace-4');
+                                    
+                                    setTimeout(() => {
+                                        activateTraceNode('trace-5');
+                                        addLog('[INFO] Response returned');
+                                        
+                                        // Update metrics
+                                        requestCount++;
+                                        successCount++;
+                                        const duration = Math.floor(Math.random() * 50) + 100;
+                                        document.getElementById('metric-duration').textContent = `${duration} ms`;
+                                        updateMetrics();
+
+                                        // Update performance
+                                        document.getElementById('perf-response').textContent = `${duration} ms`;
+                                        document.getElementById('perf-status').textContent = 'Active';
+                                        document.getElementById('perf-availability').textContent = '99.9%';
+
+                                        // Complete
+                                        functionNode.classList.remove('running');
+                                        functionNode.classList.add('success');
+                                        document.getElementById('function-status').textContent = 'Request completed';
+                                        
+                                        updateStatus('Request completed successfully', 'success');
+                                        document.getElementById('system-status').classList.add('visible');
+                                        document.getElementById('alert-status').textContent = 'No active alerts';
+
+                                        isProcessing = false;
+                                        document.getElementById('btn-send').disabled = false;
+                                        document.getElementById('btn-warning').disabled = false;
+                                    }, 300);
+                                }, 300);
+                            }, 300);
+                        }, 300);
+                    }, 500);
+                }
+
+                function simulateWarning() {
+                    if (isProcessing) return;
+                    isProcessing = true;
+
+                    document.getElementById('btn-send').disabled = true;
+                    document.getElementById('btn-warning').disabled = true;
+
+                    clearLogs();
+                    updateStatus('Simulating warning scenario...');
+                    addLog('[INFO] Function invoked');
+
+                    const functionNode = document.getElementById('function-node');
+                    functionNode.classList.add('running');
+                    document.getElementById('function-status').textContent = 'Function running...';
+
+                    setTimeout(() => {
+                        addLog('[INFO] Request received');
+                        activateTraceNode('trace-1');
+                        
+                        setTimeout(() => {
+                            activateTraceNode('trace-2');
+                            addLog('[INFO] Processing request');
+                            
+                            setTimeout(() => {
+                                activateTraceNode('trace-3');
+                                
+                                setTimeout(() => {
+                                    // Simulate delay
+                                    addLog('[WARN] Response took longer than expected');
+                                    activateTraceNode('trace-4');
+                                    
+                                    setTimeout(() => {
+                                        activateTraceNode('trace-5');
+                                        addLog('[INFO] Response returned (delayed)');
+                                        
+                                        // Update metrics with warning
+                                        requestCount++;
+                                        successCount++;
+                                        const duration = Math.floor(Math.random() * 100) + 200;
+                                        document.getElementById('metric-duration').textContent = `${duration} ms`;
+                                        updateMetrics();
+
+                                        // Update performance with warning
+                                        document.getElementById('perf-response').textContent = `${duration} ms`;
+                                        document.getElementById('perf-status').textContent = 'Warning';
+                                        document.getElementById('perf-availability').textContent = '98.5%';
+
+                                        // Complete with warning
+                                        functionNode.classList.remove('running');
+                                        functionNode.classList.add('success');
+                                        document.getElementById('function-status').textContent = 'Request completed (delayed)';
+                                        
+                                        updateStatus('Request completed with performance warning', 'warning');
+                                        document.getElementById('system-status').classList.add('visible', 'warning');
+                                        document.getElementById('alert-status').textContent = 'Warning: Function response delayed';
+                                        document.getElementById('alert-status').classList.add('warning');
+
+                                        isProcessing = false;
+                                        document.getElementById('btn-send').disabled = false;
+                                        document.getElementById('btn-warning').disabled = false;
+                                    }, 800);
+                                }, 400);
+                            }, 300);
+                        }, 300);
+                    }, 500);
+                }
+
+                function resetMonitoring() {
+                    isProcessing = false;
+                    requestCount = 0;
+                    successCount = 0;
+                    errorCount = 0;
+
+                    // Reset UI
+                    clearLogs();
+                    updateMetrics();
+                    resetTrace();
+                    
+                    document.getElementById('metric-duration').textContent = '-- ms';
+                    document.getElementById('perf-response').textContent = '--';
+                    document.getElementById('perf-status').textContent = 'Idle';
+                    document.getElementById('perf-availability').textContent = '--';
+
+                    const functionNode = document.getElementById('function-node');
+                    functionNode.classList.remove('running', 'success');
+                    document.getElementById('function-status').textContent = 'Waiting for request';
+
+                    updateStatus('Ready to monitor serverless activity.');
+                    document.getElementById('system-status').classList.remove('visible', 'warning');
+                    document.getElementById('alert-status').textContent = 'System Status: Normal';
+                    document.getElementById('alert-status').classList.remove('warning');
+
+                    document.getElementById('btn-send').disabled = false;
+                    document.getElementById('btn-warning').disabled = false;
+                }
+            </script>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 23: THE FUTURE OF SERVERLESS COMPUTING -->
+        <!-- ============================================ -->
+        <div class="slide" id="slide-23" style="justify-content: flex-start; padding-top: 24px;">
+            <h2 style="text-align: center; border-bottom: none; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 2px;">THE FUTURE OF SERVERLESS COMPUTING</h2>
+            <p style="text-align: center; color: var(--muted); max-width: 800px; margin: 0 auto 24px auto; font-size: 1rem;">
+                Serverless computing may continue to grow as organizations build scalable, flexible, and easier-to-manage cloud applications.
+            </p>
+
+            <style>
+                #slide-23 .main-container {
+                    width: 100%;
+                    max-width: 1100px;
+                    margin: 0 auto;
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    padding: 0 20px;
+                }
+
+                #slide-23 .grid-layout {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    grid-template-rows: auto auto auto;
+                    gap: 16px;
+                    margin-bottom: 20px;
+                }
+
+                #slide-23 .central-cloud-area {
+                    grid-column: 2;
+                    grid-row: 1 / 3;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 20px;
+                }
+
+                #slide-23 .cloud-svg {
+                    width: 100%;
+                    max-width: 220px;
+                    height: auto;
+                }
+
+                #slide-23 .future-card {
+                    background: rgba(15,30,55,0.9);
+                    border: 1px solid rgba(34,211,238,0.2);
+                    border-radius: 8px;
+                    padding: 16px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                    opacity: 0;
+                    animation: fadeSlideUp 0.5s ease forwards;
+                }
+
+                #slide-23 .future-card .card-icon {
+                    font-size: 1.5rem;
+                    margin-bottom: 4px;
+                }
+
+                #slide-23 .future-card .card-title {
+                    color: var(--cyan);
+                    font-weight: 600;
+                    font-size: 0.9rem;
+                    margin-bottom: 4px;
+                    line-height: 1.2;
+                }
+
+                #slide-23 .future-card .card-desc {
+                    color: var(--muted);
+                    font-size: 0.8rem;
+                    line-height: 1.4;
+                }
+
+                #slide-23 .card-tl { grid-column: 1; grid-row: 1; animation-delay: 0.3s; }
+                #slide-23 .card-tr { grid-column: 3; grid-row: 1; animation-delay: 0.4s; }
+                #slide-23 .card-ml { grid-column: 1; grid-row: 2; animation-delay: 0.5s; }
+                #slide-23 .card-mr { grid-column: 3; grid-row: 2; animation-delay: 0.6s; }
+                #slide-23 .card-bc { grid-column: 2; grid-row: 3; animation-delay: 0.7s; }
+
+                #slide-23 .closing-statement {
+                    text-align: center;
+                    color: var(--muted);
+                    font-size: 0.9rem;
+                    margin-top: 24px;
+                    padding: 12px 28px;
+                    background: rgba(15,30,55,0.6);
+                    border-radius: 8px;
+                    border-left: 3px solid var(--cyan);
+                    opacity: 0;
+                    animation: fadeSlideUp 0.5s ease 0.9s forwards;
+                    max-width: 800px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+
+                @media (max-width: 1024px) {
+                    #slide-23 .grid-layout {
+                        gap: 12px;
+                    }
+                    #slide-23 .future-card {
+                        padding: 14px;
+                    }
+                    #slide-23 .future-card .card-title {
+                        font-size: 0.85rem;
+                    }
+                    #slide-23 .future-card .card-desc {
+                        font-size: 0.75rem;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    #slide-23 .main-container {
+                        padding: 0 12px;
+                    }
+                    #slide-23 .grid-layout {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 12px;
+                    }
+                    #slide-23 .central-cloud-area {
+                        order: 1;
+                        padding: 16px;
+                    }
+                    #slide-23 .cloud-svg {
+                        max-width: 180px;
+                    }
+                    #slide-23 .future-card {
+                        order: 2;
+                        padding: 12px;
+                    }
+                    #slide-23 .card-tl, #slide-23 .card-tr, #slide-23 .card-ml, #slide-23 .card-mr, #slide-23 .card-bc {
+                        grid-column: auto;
+                        grid-row: auto;
+                    }
+                    #slide-23 .card-tl { animation-delay: 0.3s; }
+                    #slide-23 .card-tr { animation-delay: 0.4s; }
+                    #slide-23 .card-ml { animation-delay: 0.5s; }
+                    #slide-23 .card-mr { animation-delay: 0.6s; }
+                    #slide-23 .card-bc { animation-delay: 0.7s; }
+                    #slide-23 .closing-statement {
+                        font-size: 0.85rem;
+                        padding: 10px 20px;
+                        margin-top: 20px;
+                    }
+                }
+            </style>
+
+            <div class="main-container">
+                <div class="grid-layout">
+                    <!-- Top-left Card -->
+                    <div class="future-card card-tl">
+                        <div class="card-icon">⚡</div>
+                        <div class="card-title">Event-Driven Systems</div>
+                        <div class="card-desc">Applications respond automatically to events, messages, and user actions.</div>
+                    </div>
+
+                    <!-- Central Cloud -->
+                    <div class="central-cloud-area">
+                        <svg class="cloud-svg" viewBox="0 0 220 140" preserveAspectRatio="xMidYMid meet">
+                            <defs>
+                                <filter id="cloudGlow23" x="-30%" y="-30%" width="160%" height="160%">
+                                    <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+                                    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                                </filter>
+                                <radialGradient id="cloudGrad23" cx="50%" cy="45%" r="55%">
+                                    <stop offset="0%" stop-color="rgba(34,211,238,0.15)"/>
+                                    <stop offset="60%" stop-color="rgba(37,99,235,0.08)"/>
+                                    <stop offset="100%" stop-color="rgba(10,25,47,0.02)"/>
+                                </radialGradient>
+                            </defs>
+                            <ellipse cx="110" cy="70" rx="90" ry="50" fill="url(#cloudGrad23)" opacity="0.8"/>
+                            <path d="M35,85 a40,40 0 0,1 0,-40 a45,45 0 0,1 55,-22 a40,40 0 0,1 65,0 a45,45 0 0,1 55,22 a40,40 0 0,1 0,40 z" 
+                                  fill="rgba(15,30,55,0.92)" stroke="#22D3EE" stroke-width="2" filter="url(#cloudGlow23)"/>
+                            <text x="110" y="65" fill="#2563EB" font-size="11" text-anchor="middle" font-weight="700" letter-spacing="1.5">SERVERLESS</text>
+                            <text x="110" y="82" fill="#22D3EE" font-size="12" text-anchor="middle" font-weight="700" letter-spacing="1.5">COMPUTING</text>
+                            <text x="110" y="102" fill="rgba(168,180,199,0.6)" font-size="7" text-anchor="middle" letter-spacing="2">SCALABLE • AUTOMATED • CLOUD-BASED</text>
+                        </svg>
+                    </div>
+
+                    <!-- Top-right Card -->
+                    <div class="future-card card-tr">
+                        <div class="card-icon">🤖</div>
+                        <div class="card-title">AI and Intelligent Services</div>
+                        <div class="card-desc">Serverless functions can connect AI tools, APIs, and automated workflows.</div>
+                    </div>
+
+                    <!-- Middle-left Card -->
+                    <div class="future-card card-ml">
+                        <div class="card-icon">🌐</div>
+                        <div class="card-title">Connected IoT Applications</div>
+                        <div class="card-desc">Serverless computing can support smart devices, sensors, and real-time systems.</div>
+                    </div>
+
+                    <!-- Middle-right Card -->
+                    <div class="future-card card-mr">
+                        <div class="card-icon">🚀</div>
+                        <div class="card-title">Faster and More Efficient Execution</div>
+                        <div class="card-desc">Cloud platforms may improve cold starts, response time, and resource efficiency.</div>
+                    </div>
+
+                    <!-- Bottom-center Card -->
+                    <div class="future-card card-bc">
+                        <div class="card-icon">🏢</div>
+                        <div class="card-title">Wider Digital Adoption</div>
+                        <div class="card-desc">More schools, businesses, and organizations may use serverless cloud applications.</div>
+                    </div>
+                </div>
+
+                <!-- Closing Statement -->
+                <div class="closing-statement">
+                    The future of serverless computing is focused on intelligent automation, connected systems, improved performance, and wider cloud adoption.
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 24: SUMMARY AND QUICK REVIEW -->
+        <!-- ============================================ -->
+        <div class="slide" id="slide-24" style="justify-content: flex-start; padding-top: 40px;">
+            <h2 style="text-align: center; border-bottom: none; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px;">Summary and Quick Review</h2>
             <p style="text-align: center; color: var(--muted); max-width: 900px; margin: 0 auto 25px auto; font-size: 1.05rem;">
                 Review the key concepts from this presentation, then test your knowledge.
             </p>
 
             <style>
-                #slide-21 .summary-layout {
+                #slide-24 .summary-layout {
                     display: flex; gap: 30px; width: 100%; max-width: 1100px; margin: 0 auto; flex: 1; align-items: flex-start;
                 }
-                #slide-21 .takeaway-col {
-                    flex: 1; display: flex; flex-direction: column; gap: 12px;
+                #slide-24 .takeaway-col {
+                    flex: 1; display: flex; flex-direction: column; gap: 10px;
                 }
-                #slide-21 .takeaway-card {
+                #slide-24 .takeaway-card {
                     background: rgba(15, 30, 55, 0.8); border: 1px solid rgba(255,255,255,0.1);
-                    border-left: 3px solid #22D3EE; border-radius: 10px; padding: 14px 18px;
-                    display: flex; align-items: center; gap: 14px;
+                    border-left: 3px solid #22D3EE; border-radius: 10px; padding: 12px 16px;
+                    display: flex; align-items: center; gap: 12px;
                     opacity: 0; animation: fadeSlideUp 0.5s ease forwards;
                 }
-                #slide-21 .takeaway-card:nth-child(1) { animation-delay: 0.1s; }
-                #slide-21 .takeaway-card:nth-child(2) { animation-delay: 0.2s; }
-                #slide-21 .takeaway-card:nth-child(3) { animation-delay: 0.3s; }
-                #slide-21 .takeaway-card:nth-child(4) { animation-delay: 0.4s; }
-                #slide-21 .takeaway-card:nth-child(5) { animation-delay: 0.5s; }
+                #slide-24 .takeaway-card:nth-child(1) { animation-delay: 0.1s; }
+                #slide-24 .takeaway-card:nth-child(2) { animation-delay: 0.2s; }
+                #slide-24 .takeaway-card:nth-child(3) { animation-delay: 0.3s; }
+                #slide-24 .takeaway-card:nth-child(4) { animation-delay: 0.4s; }
+                #slide-24 .takeaway-card:nth-child(5) { animation-delay: 0.5s; }
+                #slide-24 .takeaway-card:nth-child(6) { animation-delay: 0.6s; }
+                #slide-24 .takeaway-card:nth-child(7) { animation-delay: 0.7s; }
+                #slide-24 .takeaway-card:nth-child(8) { animation-delay: 0.8s; }
+                #slide-24 .takeaway-card:nth-child(9) { animation-delay: 0.9s; }
 
-                #slide-21 .takeaway-icon {
-                    font-size: 1.5rem; flex-shrink: 0; width: 40px; text-align: center;
+                #slide-24 .takeaway-icon {
+                    font-size: 1.3rem; flex-shrink: 0; width: 35px; text-align: center;
                 }
-                #slide-21 .takeaway-text {
-                    color: white; font-size: 1rem; font-weight: 500; line-height: 1.4;
+                #slide-24 .takeaway-text {
+                    color: white; font-size: 0.9rem; font-weight: 500; line-height: 1.4;
                 }
 
-                #slide-21 .quiz-col {
+                #slide-24 .quiz-col {
                     flex: 1; display: flex; flex-direction: column; gap: 15px;
                 }
-                #slide-21 .quiz-header {
+                #slide-24 .quiz-header {
                     text-align: center; padding: 12px; background: rgba(34,211,238,0.08);
                     border: 1px solid rgba(34,211,238,0.2); border-radius: 10px;
                 }
 
                 @media (max-width: 900px) {
-                    #slide-21 .summary-layout { flex-direction: column; }
+                    #slide-24 .summary-layout { flex-direction: column; }
                 }
             </style>
 
             <div class="summary-layout">
                 <div class="takeaway-col">
-                    <h3 style="color: #22D3EE; margin: 0 0 5px 0; font-size: 1.15rem; text-transform: uppercase; letter-spacing: 1px;">Key Takeaways</h3>
+                    <h3 style="color: #22D3EE; margin: 0 0 5px 0; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;">Key Takeaways</h3>
                     <div class="takeaway-card">
                         <div class="takeaway-icon">☁️</div>
                         <div class="takeaway-text">Serverless is a cloud computing model</div>
                     </div>
                     <div class="takeaway-card">
-                        <div class="takeaway-icon">🏗️</div>
-                        <div class="takeaway-text">The provider manages the infrastructure</div>
-                    </div>
-                    <div class="takeaway-card">
-                        <div class="takeaway-icon">⚡</div>
-                        <div class="takeaway-text">Functions run only when triggered</div>
+                        <div class="takeaway-icon">⚙️</div>
+                        <div class="takeaway-text">How serverless computing works</div>
                     </div>
                     <div class="takeaway-card">
                         <div class="takeaway-icon">🔧</div>
-                        <div class="takeaway-text">FaaS runs code; BaaS provides services</div>
+                        <div class="takeaway-text">Difference between FaaS and BaaS</div>
                     </div>
                     <div class="takeaway-card">
-                        <div class="takeaway-icon">📈</div>
-                        <div class="takeaway-text">Useful for scalable, event-driven applications</div>
+                        <div class="takeaway-icon">✅</div>
+                        <div class="takeaway-text">Advantages and disadvantages</div>
+                    </div>
+                    <div class="takeaway-card">
+                        <div class="takeaway-icon">🔒</div>
+                        <div class="takeaway-text">Security and cost considerations</div>
+                    </div>
+                    <div class="takeaway-card">
+                        <div class="takeaway-icon">🚀</div>
+                        <div class="takeaway-text">Cold starts and performance</div>
+                    </div>
+                    <div class="takeaway-card">
+                        <div class="takeaway-icon">🌐</div>
+                        <div class="takeaway-text">Real-world applications</div>
+                    </div>
+                    <div class="takeaway-card">
+                        <div class="takeaway-icon">📊</div>
+                        <div class="takeaway-text">Deployment and monitoring</div>
+                    </div>
+                    <div class="takeaway-card">
+                        <div class="takeaway-icon">🔮</div>
+                        <div class="takeaway-text">The future of serverless computing</div>
                     </div>
                 </div>
 
                 <div class="quiz-col">
                     <div class="quiz-header">
-                        <h3 style="color: #22D3EE; margin: 0; font-size: 1.15rem; text-transform: uppercase; letter-spacing: 1px;">🧠 Quick Review Quiz</h3>
+                        <h3 style="color: #22D3EE; margin: 0; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;">🧠 Quick Review Quiz</h3>
                     </div>
                     <div class="mc-quiz" id="quiz-container">
                         <!-- Injected by JS -->
@@ -3427,7 +5150,7 @@
                 <button class="control-btn" id="restart-btn" onclick="restart()">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg> Restart
                 </button>
-                <span class="slide-counter" id="slide-counter">1 / 21</span>
+                <span class="slide-counter" id="slide-counter">1 / 24</span>
             </div>
             <div class="nav-group center-controls">
                 <button class="control-btn nav-btn" id="prev-btn" onclick="prevSlide()">◀ Previous</button>

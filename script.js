@@ -1,5 +1,5 @@
 let currentSlideIndex = 1;
-const totalSlides = 21;
+const totalSlides = 24;
 
 // Quiz Data
 const quizQuestions = [
@@ -37,26 +37,26 @@ const quizQuestions = [
         explanation: "BaaS stands for Backend as a Service — it provides ready-made backend features like databases and authentication."
     },
     {
-        q: "Which is an advantage of serverless computing?",
+        q: "Who manages the underlying servers in serverless computing?",
         options: [
-            "It automatically writes code for you.",
-            "It eliminates cold starts entirely.",
-            "It allows apps to handle changing traffic automatically.",
-            "It automatically manages database backups."
-        ],
-        correct: 2,
-        explanation: "Automatic scaling means the platform can handle traffic spikes by spinning up more function instances."
-    },
-    {
-        q: "Is serverless computing the same as cloud computing?",
-        options: [
-            "Yes, they are identical.",
-            "No — serverless is one model within the broader category of cloud computing.",
-            "No — serverless is broader than cloud computing.",
-            "They are completely unrelated."
+            "The developer",
+            "The cloud provider",
+            "The end user",
+            "No one manages them"
         ],
         correct: 1,
-        explanation: "Cloud computing is the broad category. Serverless is a specific execution model within it."
+        explanation: "In serverless computing, the cloud provider manages the underlying infrastructure and servers."
+    },
+    {
+        q: "What is a cold start?",
+        options: [
+            "When a server shuts down permanently",
+            "The extra startup delay when a serverless function environment needs to be prepared",
+            "A type of cloud storage",
+            "When a function runs successfully"
+        ],
+        correct: 1,
+        explanation: "A cold start is the additional delay that occurs when a serverless function needs to initialize its environment before running."
     }
 ];
 
